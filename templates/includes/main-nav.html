@@ -5,10 +5,10 @@
                 All Cattle
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="" class="dropdown-item">By Price</a>
-                <a href="" class="dropdown-item ">By Star Rating</a>
-                <a href="" class="dropdown-item ">By Breed</a>
-                <a href="" class="dropdown-item">All Cattle</a>
+                <a href="{% url 'cattle' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
+                <a href="{% url 'cattle' %}?sort=price&direction=asc" class="dropdown-item ">By Star Rating</a>
+                <a href="{% url 'cattle' %}?sort=enterprise&direction=asc" class="dropdown-item ">By Enterprise</a>
+                <a href="{% url 'cattle' %}" class="dropdown-item" class="dropdown-item">All Cattle</a>
             </div>
         </li>
 

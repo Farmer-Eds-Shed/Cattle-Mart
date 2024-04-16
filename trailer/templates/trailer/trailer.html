@@ -23,7 +23,52 @@
         <div class="row">
             <div class="col">
                 {% if trailer_cattle %}
-                    <div class="table-responsive rounded"></div>
+                    <div class="table-responsive rounded">
+                        <table class="table table-sm table-borderless">
+                            <thead class="text-black">
+                                <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                    <th scope="col">Price</th>
+                                    <th scope="col">Qty</th>
+                                </tr>
+                            </thead>
+
+                            {% for animal in trailer_cattle %}
+                                <tr>
+                                    <td class="p-3 w-25">
+                                        <img class="img-fluid rounded" src="">
+                                    </td>
+                                    <td class="py-3">
+
+                                    </td>
+                                    <td class="py-3">
+                                        <p class="my-0">${{ animal.cattle.price }}</p>
+                                    </td>
+                                    <td class="py-3 w-25">
+                                        <p class="my-0">{{ animal.quantity }}</p>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            <tr>
+                                <td colspan="5" class="pt-5 text-right">
+                                    <h3><strong>Estimated Total: ${{ total|floatformat:2 }}</strong></h3>
+                                    <p>Total subject to sellers reporting on their adverts.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="5" class="text-right">
+                                    <a href="{% url 'cattle' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                                        <span class="icon">
+                                            <i class="fas fa-chevron-left"></i>
+                                        </span>
+                                        <span class="text-uppercase">Keep Shopping</span>
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
                 {% else %}
                     <p class="lead mb-5">Your trailer is empty.</p>
                     <a href="{% url 'cattle' %}" class="btn btn-outline-black rounded-0 btn-lg">

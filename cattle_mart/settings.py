@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'home',
     'cattle',
     'trailer',
+    'checkout',
 ]
 
 MIDDLEWARE = [

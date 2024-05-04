@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.db.models import Q
 from .models import Cattle, Enterprise
 from django.db.models.functions import Lower
+from .forms import CattleForm
 
 
 # Create your views here.
@@ -69,3 +70,23 @@ def cattle_detail(request, cattle_id):
     }
 
     return render(request, 'cattle/cattle_detail.html', context)
+
+def add_cattle(request):
+    """ Add cattle to mart """
+    if request.method == 'POST':
+        form = CattleForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully added animal!')
+            return redirect(reverse('add_cattle'))
+        else:
+            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+    else:
+        form = CattleForm()
+    
+    template = 'cattle/add_cattle.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)

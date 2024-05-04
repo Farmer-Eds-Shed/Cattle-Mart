@@ -53,6 +53,7 @@ def remove_from_trailer(request, cattle_id):
     try:
         trailer = request.session.get('trailer', {})
         animal = Cattle.objects.get(pk=cattle_id)
+        
         trailer.pop(cattle_id)
         messages.success(request, f'Removed {animal.stock_type} from your trailer')
 

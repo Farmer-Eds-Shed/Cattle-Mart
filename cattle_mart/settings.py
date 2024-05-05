@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'cattle',
     'trailer',
     'checkout',
+    'profiles',
 ]
 
 MIDDLEWARE = [

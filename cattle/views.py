@@ -28,7 +28,7 @@ def all_cattle(request):
             if sortkey == 'enterprise':
                 sortkey = 'enterprise__name'
             if sortkey == 'stock_type':
-                sortkey =='stock_type__name'
+                sortkey ='stock_type__name'
             if 'direction' in request.GET:
                 direction = request.GET['direction']
                 if direction == 'desc':
@@ -51,7 +51,7 @@ def all_cattle(request):
                 messages.error(request, "You didn't enter any search criteria!")
                 return redirect(reverse('cattle'))
             
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            queries = Q(name__icontains=query) | Q(description__icontains=query) | Q(stock_type__name__icontains=query) | Q(enterprise__name__icontains=query)
             cattle = cattle.filter(queries)
 
     current_sorting = f'{sort}_{direction}'

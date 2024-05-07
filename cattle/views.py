@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
-from .models import Cattle, Enterprise
+from .models import Cattle, Enterprise, StockType
 from django.db.models.functions import Lower
 from .forms import CattleForm
 
@@ -14,6 +14,7 @@ def all_cattle(request):
     cattle = Cattle.objects.all()
     query = None
     enterprises = None
+    stock_types = None
     sort = None
     direction = None
 
@@ -24,8 +25,10 @@ def all_cattle(request):
             if sortkey == 'name':
                 sortkey = 'lower_name'
                 cattle = cattle.annotate(lower_name=Lower('name'))
-            if sortkey == 'category':
-                sortkey = 'category__name'
+            if sortkey == 'enterprise':
+                sortkey = 'enterprise__name'
+            if sortkey == 'stock_type':
+                sortkey =='stock_type__name'
             if 'direction' in request.GET:
                 direction = request.GET['direction']
                 if direction == 'desc':
@@ -37,7 +40,10 @@ def all_cattle(request):
             cattle = cattle.filter(enterprise__name__in=enterprises)
             enterprises = Enterprise.objects.filter(name__in=enterprises)
 
-
+        if 'stock_type' in request.GET:
+            stock_types = request.GET['stock_type'].split(',')
+            cattle = cattle.filter(stock_type__name__in=stock_types)
+            stock_types = StockType.objects.filter(name__in=stock_types)
 
         if 'q' in request.GET:
             query = request.GET['q']

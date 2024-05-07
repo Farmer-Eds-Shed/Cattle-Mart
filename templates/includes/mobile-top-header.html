@@ -30,9 +30,9 @@
     <div class="dropdown-menu border-0" aria-labelledby="user-options">
         {% if request.user.is_authenticated %}
             {% if request.user.is_superuser %}
-                <a href="{% url 'account_logout' %}" class="dropdown-item">Product Management</a>
+                <a href="{% url 'account_logout' %}" class="dropdown-item">Livestock Management</a>
             {% endif %}
-            <a href="#" class="dropdown-item">My Profile</a>
+            <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
             <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
         {% else %}
             <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
@@ -41,12 +41,12 @@
     </div>
 </li>
 <li class="list-inline-item">
-    <a class="{% if grand_total %}text-primary font-weight-bold{% else %}text-black{% endif %} nav-link d-block d-lg-none" href="">
+    <a class="{% if total %}text-primary font-weight-bold{% else %}text-black{% endif %} nav-link d-block d-lg-none" href="{% url 'view_trailer' %}">
         <div class="text-center">
             <div><i class="fas fa-trailer fa-lg"></i></div>
             <p class="my-0">
-                {% if grand_total %}
-                    €{{ grand_total|floatformat:2 }}
+                {% if total %}
+                    €{{ total|floatformat:2 }}
                 {% else %}
                     €0.00
                 {% endif %}

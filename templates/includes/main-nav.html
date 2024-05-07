@@ -6,7 +6,7 @@
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
                 <a href="{% url 'cattle' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
-                <a href="{% url 'cattle' %}?sort=price&direction=asc" class="dropdown-item ">By Star Rating</a>
+                <a href="{% url 'cattle' %}?sort=star_rating&direction=desc" class="dropdown-item ">By Star Rating</a>
                 <a href="{% url 'cattle' %}?sort=enterprise&direction=asc" class="dropdown-item ">By Enterprise</a>
                 <a href="{% url 'cattle' %}" class="dropdown-item" class="dropdown-item">All Cattle</a>
             </div>
@@ -17,10 +17,11 @@
                 Dairy
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="dairy-link">
-                <a href="" class="dropdown-item">Cows</a>
-                <a href="" class="dropdown-item">Heifers</a>
-                <a href="" class="dropdown-item">Calves</a>
-                <a href="" class="dropdown-item">Bulls</a>
+                <a href="{% url 'cattle' %}?enterprise=Dairy&stock_type=Cow" class="dropdown-item">Cows</a>
+                <a href="{% url 'cattle' %}?enterprise=Dairy&stock_type=Heifer" class="dropdown-item">Heifers</a>
+                <a href="{% url 'cattle' %}?enterprise=Dairy&stock_type=Calf" class="dropdown-item">Calves</a>
+                <a href="{% url 'cattle' %}?enterprise=Dairy&stock_type=Bull" class="dropdown-item">Bulls</a>
+                <a href="{% url 'cattle' %}?enterprise=Dairy&stock_type=Bull" class="dropdown-item">Bullock</a>
             </div>
         </li>
 
@@ -29,10 +30,11 @@
                 Beef
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="beef-link">
-                <a href="" class="dropdown-item">Cows</a>
-                <a href="" class="dropdown-item">Heifers</a>
-                <a href="" class="dropdown-item">Calves</a>
-                <a href="" class="dropdown-item">Bulls</a>
+                <a href="{% url 'cattle' %}?enterprise=Beef&stock_type=Cow" class="dropdown-item">Cows</a>
+                <a href="{% url 'cattle' %}?enterprise=Beef&stock_type=Heifer" class="dropdown-item">Heifers</a>
+                <a href="{% url 'cattle' %}?enterprise=Beef&stock_type=Calf" class="dropdown-item">Calves</a>
+                <a href="{% url 'cattle' %}?enterprise=Beef&stock_type=Bull" class="dropdown-item">Bulls</a>
+                <a href="{% url 'cattle' %}?enterprise=Beef&stock_type=Bull" class="dropdown-item">Bullock</a>
             </div>
         </li>
 
@@ -41,10 +43,11 @@
                 Organic
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="organic-link">
-                <a href="" class="dropdown-item">Cows</a>
-                <a href="" class="dropdown-item">Heifers</a>
-                <a href="" class="dropdown-item">Calves</a>
-                <a href="" class="dropdown-item">Bulls</a>
+                <a href="{% url 'cattle' %}?enterprise=Organic&stock_type=Cow" class="dropdown-item">Cows</a>
+                <a href="{% url 'cattle' %}?enterprise=Organic&stock_type=Heifer" class="dropdown-item">Heifers</a>
+                <a href="{% url 'cattle' %}?enterprise=Organic&stock_type=Calf" class="dropdown-item">Calves</a>
+                <a href="{% url 'cattle' %}?enterprise=Organic&stock_type=Bull" class="dropdown-item">Bulls</a>
+                <a href="{% url 'cattle' %}?enterprise=Organic&stock_type=Bull" class="dropdown-item">Bullock</a>
             </div>
         </li>
     </ul>

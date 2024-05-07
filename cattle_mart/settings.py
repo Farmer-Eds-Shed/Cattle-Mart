@@ -30,6 +30,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'cattle-mart-42a123405ccb.herokuapp.com',
+    '127.0.0.1',
 ]
 
 

@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from .models import Cattle, Enterprise, StockType
 from django.db.models.functions import Lower
@@ -86,7 +87,7 @@ def add_cattle(request):
             messages.success(request, 'Successfully added animal!')
             return redirect(reverse('add_cattle'))
         else:
-            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+            messages.error(request, 'Failed to add animal. Please ensure the form is valid.')
     else:
         form = CattleForm()
     
@@ -96,3 +97,44 @@ def add_cattle(request):
     }
 
     return render(request, template, context)
+
+@login_required
+def edit_cattle(request, animal_id):
+    """ Edit an animal in the mart """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only mart owners can do that.')
+        return redirect(reverse('home'))
+
+    animal = get_object_or_404(Cattle, pk=animal_id)
+    if request.method == 'POST':
+        form = CattleForm(request.POST, request.FILES, instance=animal)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated animal!')
+            return redirect(reverse('cattle_detail', args=[animal.id]))
+        else:
+            messages.error(request, 'Failed to update animal. Please ensure the form is valid.')
+    else:
+        form = CattleForm(instance=animal)
+        messages.info(request, f'You are editing {animal.tag}')
+
+    template = 'cattle/edit_cattle.html'
+    context = {
+        'form': form,
+        'animal': animal,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def delete_cattle(request, animal_id):
+    """ Delete an animal from the mart """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only mart owners can do that.')
+        return redirect(reverse('home'))
+
+    animal = get_object_or_404(Cattle, pk=animal_id)
+    animal.delete()
+    messages.success(request, 'Animal deleted!')
+    return redirect(reverse('cattle'))

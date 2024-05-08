@@ -78,8 +78,13 @@ def cattle_detail(request, cattle_id):
 
     return render(request, 'cattle/cattle_detail.html', context)
 
+@login_required
 def add_cattle(request):
     """ Add cattle to mart """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only mart owners can do that.')
+        return redirect(reverse('home'))
+
     if request.method == 'POST':
         form = CattleForm(request.POST, request.FILES)
         if form.is_valid():

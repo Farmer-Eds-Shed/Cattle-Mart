@@ -5,6 +5,7 @@ from cattle.models import Cattle
 
 import json
 import time
+import stripe
 
 class StripeWH_Handler:
     """Handle Stripe webhooks"""

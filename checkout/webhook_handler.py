@@ -27,7 +27,7 @@ class StripeWH_Handler:
         print("received")
         intent = event.data.object
         pid = intent.id
-        trailer = intent.metadata.bag
+        trailer = intent.metadata.trailer
         save_info = intent.metadata.save_info
 
         # Get the Charge object

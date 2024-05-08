@@ -30,8 +30,11 @@
                                     <th scope="col"></th>
                                     <th scope="col"></th>
                                     <th scope="col">Price</th>
+                                    <th scope="col">Breed</th>
                                     <th scope="col">Tag</th>
                                     <th scope="col">ICBF Star Rating</th>
+                                    <th scope="col">CBV</th>
+
                                 </tr>
                             </thead>
 
@@ -44,43 +47,21 @@
 
                                     </td>
                                     <td class="py-3">
-                                        <p class="my-0">${{ animal.cattle.price }}</p>
+                                        <p class="my-0">€{{ animal.cattle.price }}</p>
                                     </td>
                                     <td class="py-3">
-                                        <p class="my-0">${{ animal.cattle.tag }}</p>
+                                        <p class="my-0">€{{ animal.cattle.breed }}</p>
                                     </td>
                                     <td class="py-3">
-                                        <p class="my-0">${{ animal.cattle.star_rating }}</p>
+                                        <p class="my-0">{{ animal.cattle.tag }}</p>
+                                    </td>
+                                    <td class="py-3">
+                                        <p class="my-0">{{ animal.cattle.star_rating }}</p>
+                                    </td>
+                                    <td class="py-3">
+                                        <p class="my-0">{{ animal.cattle.cbv }}</p>
                                     </td>
                                     <td class="py-3 w-25">
-                                        <form class="form update-form" method="POST" action="{% url 'adjust_trailer' animal.cattle_id %}">
-                                            {% csrf_token %}
-                                            <div class="form-group">
-                                                <div class="input-group">
-                                                    <div class="input-group-prepend">
-                                                        <button class="decrement-qty btn btn-sm btn-black rounded-0" 
-                                                            data-item_id="{{ animal.cattle_id }}" id="decrement-qty_{{ animal.cattle_id }}">
-                                                            <span>
-                                                                <i class="fas fa-minus fa-sm"></i>
-                                                            </span>
-                                                        </button>
-                                                    </div>
-                                                    <input class="form-control form-control-sm qty_input" type="number"
-                                                        name="quantity" value="{{ animal.quantity }}" min="1" max="99"
-                                                        data-item_id="{{ animal.cattle_id }}"
-                                                        id="id_qty_{{ animal.cattle_id }}">
-                                                    <div class="input-group-append">
-                                                        <button class="increment-qty btn btn-sm btn-black rounded-0"
-                                                            data-item_id="{{ animal.cattle_id }}" id="increment-qty_{{ animal.cattle_id }}">
-                                                            <span>
-                                                                <i class="fas fa-plus fa-sm"></i>
-                                                            </span>
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
-                                        <a class="update-link text-info"><small>Update</small></a>
                                         <a class="remove-cattle text-danger float-right" id="remove_{{ animal.cattle_id }}/"><small>Remove</small></a>
                                     </td>
                                 </tr>

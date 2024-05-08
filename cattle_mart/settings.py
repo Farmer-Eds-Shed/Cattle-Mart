@@ -235,4 +235,5 @@ else:
 
 # MailChimp
     MAILCHIMP_API_KEY = os.environ.get('MAIL_CHIMP_API')
-    MAILCHIMP_REGION = 'us17'
+    MAILCHIMP_REGION = os.environ.get('MAIL_CHIMP_REGION')
+    MAILCHIMP_MARKETING_AUDIENCE_ID = os.environ.get('MAIL_CHIMP_ID')

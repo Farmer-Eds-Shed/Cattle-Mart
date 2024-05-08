@@ -5,6 +5,11 @@ from cattle_mart import settings
 from marketing.forms import EmailForm
 
 import mailchimp_marketing as MailchimpMarketing
+from mailchimp_marketing.api_client import ApiClientError
+
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 def subscribe_view(request):
@@ -71,3 +76,28 @@ mailchimp.set_config({
 def mailchimp_ping_view(request):
     response = mailchimp.ping.get()
     return JsonResponse(response)
+
+def subscribe_view(request):
+    if request.method == 'POST':
+        form = EmailForm(request.POST)
+        if form.is_valid():
+            try:
+                form_email = form.cleaned_data['email']
+                member_info = {
+                    'email_address': form_email,
+                    'status': 'subscribed',
+                }
+                response = mailchimp.lists.add_list_member(
+                    settings.MAILCHIMP_MARKETING_AUDIENCE_ID,
+                    member_info,
+                )
+                logger.info(f'API call successful: {response}')
+                return redirect('subscribe-success')
+
+            except ApiClientError as error:
+                logger.error(f'An exception occurred: {error.text}')
+                return redirect('subscribe-fail')
+
+    return render(request, 'subscribe.html', {
+        'form': EmailForm(),
+    })

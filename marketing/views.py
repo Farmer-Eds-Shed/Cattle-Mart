@@ -16,11 +16,24 @@ def subscribe_view(request):
     if request.method == 'POST':
         form = EmailForm(request.POST)
         if form.is_valid():
-            form_email = form.cleaned_data['email']
-            # TODO: use Mailchimp API to subscribe
-            return redirect('subscribe-success')
+            try:
+                form_email = form.cleaned_data['email']
+                member_info = {
+                    'email_address': form_email,
+                    'status': 'subscribed',
+                }
+                response = mailchimp.lists.add_list_member(
+                    settings.MAILCHIMP_MARKETING_AUDIENCE_ID,
+                    member_info,
+                )
+                logger.info(f'API call successful: {response}')
+                return redirect('subscribe-success')
 
-    return render(request, 'marketing/subscribe.html', {
+            except ApiClientError as error:
+                logger.error(f'An exception occurred: {error.text}')
+                return redirect('subscribe-fail')
+
+    return render(request, 'subscribe.html', {
         'form': EmailForm(),
     })
 
@@ -76,28 +89,3 @@ mailchimp.set_config({
 def mailchimp_ping_view(request):
     response = mailchimp.ping.get()
     return JsonResponse(response)
-
-def subscribe_view(request):
-    if request.method == 'POST':
-        form = EmailForm(request.POST)
-        if form.is_valid():
-            try:
-                form_email = form.cleaned_data['email']
-                member_info = {
-                    'email_address': form_email,
-                    'status': 'subscribed',
-                }
-                response = mailchimp.lists.add_list_member(
-                    settings.MAILCHIMP_MARKETING_AUDIENCE_ID,
-                    member_info,
-                )
-                logger.info(f'API call successful: {response}')
-                return redirect('subscribe-success')
-
-            except ApiClientError as error:
-                logger.error(f'An exception occurred: {error.text}')
-                return redirect('subscribe-fail')
-
-    return render(request, 'subscribe.html', {
-        'form': EmailForm(),
-    })

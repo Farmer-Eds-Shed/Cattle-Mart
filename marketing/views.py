@@ -7,6 +7,7 @@ from marketing.forms import EmailForm
 import mailchimp_marketing as MailchimpMarketing
 from mailchimp_marketing.api_client import ApiClientError
 
+import hashlib
 import logging
 
 logger = logging.getLogger(__name__)

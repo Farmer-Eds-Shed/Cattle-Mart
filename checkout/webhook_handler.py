@@ -61,7 +61,7 @@ class StripeWH_Handler:
                     county__iexact=shipping_details.address.state,
                     grand_total=grand_total,
                     #original_trailer=trailer,
-                    stripe_pid=pid,
+                    #stripe_pid=pid,
                 )
                 order_exists = True
                 break
@@ -86,7 +86,7 @@ class StripeWH_Handler:
                     street_address2=shipping_details.address.line2,
                     county=shipping_details.address.state,
                     #original_trailer=trailer,
-                    stripe_pid=pid,
+                    #stripe_pid=pid,
                 )
                 for item_id, item_data in json.loads(trailer).items():
                     cattle = Cattle.objects.get(id=item_id)

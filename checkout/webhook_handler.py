@@ -60,7 +60,7 @@ class StripeWH_Handler:
                     street_address2__iexact=shipping_details.address.line2,
                     county__iexact=shipping_details.address.state,
                     grand_total=grand_total,
-                    original_trailer=trailer,
+                    #original_trailer=trailer,
                     stripe_pid=pid,
                 )
                 order_exists = True
@@ -85,7 +85,7 @@ class StripeWH_Handler:
                     street_address1=shipping_details.address.line1,
                     street_address2=shipping_details.address.line2,
                     county=shipping_details.address.state,
-                    original_trailer=trailer,
+                    #original_trailer=trailer,
                     stripe_pid=pid,
                 )
                 for item_id, item_data in json.loads(trailer).items():

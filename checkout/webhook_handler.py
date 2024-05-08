@@ -24,10 +24,16 @@ class StripeWH_Handler:
         """
         Handle the payment_intent.succeeded webhook from Stripe
         """
+        print("received")
         intent = event.data.object
         pid = intent.id
-        trailer = intent.metadata.trailer
+        trailer = intent.metadata.bag
         save_info = intent.metadata.save_info
+
+        # Get the Charge object
+        stripe_charge = stripe.Charge.retrieve(
+            intent.latest_charge
+        )
 
         billing_details = stripe_charge.billing_details # updated
         shipping_details = intent.shipping

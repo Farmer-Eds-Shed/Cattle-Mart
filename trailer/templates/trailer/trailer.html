@@ -30,7 +30,8 @@
                                     <th scope="col"></th>
                                     <th scope="col"></th>
                                     <th scope="col">Price</th>
-                                    <th scope="col">Qty</th>
+                                    <th scope="col">Tag</th>
+                                    <th scope="col">ICBF Star Rating</th>
                                 </tr>
                             </thead>
 
@@ -43,7 +44,13 @@
 
                                     </td>
                                     <td class="py-3">
-                                        <p class="my-0">${{ animal.cattle.price }} {{ animal.cattle_id }}</p>
+                                        <p class="my-0">${{ animal.cattle.price }}</p>
+                                    </td>
+                                    <td class="py-3">
+                                        <p class="my-0">${{ animal.cattle.tag }}</p>
+                                    </td>
+                                    <td class="py-3">
+                                        <p class="my-0">${{ animal.cattle.star_rating }}</p>
                                     </td>
                                     <td class="py-3 w-25">
                                         <form class="form update-form" method="POST" action="{% url 'adjust_trailer' animal.cattle_id %}">
@@ -80,8 +87,8 @@
                             {% endfor %}
                             <tr>
                                 <td colspan="5" class="pt-5 text-right">
-                                    <h3><strong>Estimated Total: ${{ total|floatformat:2 }}</strong></h3>
-                                    <p>Total subject to sellers reporting on their adverts.</p>
+                                    <h3><strong>Total: ${{ total|floatformat:2 }}</strong></h3>
+                                    <p></p>
                                 </td>
                             </tr>
                             <tr>

@@ -56,9 +56,23 @@ def unsubscribe_view(request):
     if request.method == 'POST':
         form = EmailForm(request.POST)
         if form.is_valid():
-            form_email = form.cleaned_data['email']
-            # TODO: use Mailchimp API to unsubscribe
-            return redirect('unsubscribe-success')
+            try:
+                form_email = form.cleaned_data['email']
+                form_email_hash = hashlib.md5(form_email.encode('utf-8').lower()).hexdigest()
+                member_update = {
+                    'status': 'unsubscribed',
+                }
+                response = mailchimp.lists.update_list_member(
+                    settings.MAILCHIMP_MARKETING_AUDIENCE_ID,
+                    form_email_hash,
+                    member_update,
+                )
+                logger.info(f'API call successful: {response}')
+                return redirect('unsubscribe-success')
+
+            except ApiClientError as error:
+                logger.error(f'An exception occurred: {error.text}')
+                return redirect('unsubscribe-fail')
 
     return render(request, 'marketing/unsubscribe.html', {
         'form': EmailForm(),

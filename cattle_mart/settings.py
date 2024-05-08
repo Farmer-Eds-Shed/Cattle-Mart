@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'trailer',
     'checkout',
     'profiles',
+    'marketing.apps.MarketingConfig',
 ]
 
 MIDDLEWARE = [
@@ -231,3 +232,7 @@ else:
     EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
     EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
     DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
+
+# MailChimp
+    MAILCHIMP_API_KEY = os.environ.get('MAIL_CHIMP_API')
+    MAILCHIMP_REGION = 'us17'

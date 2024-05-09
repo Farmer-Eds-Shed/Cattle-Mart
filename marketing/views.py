@@ -11,6 +11,11 @@ import hashlib
 import logging
 
 logger = logging.getLogger(__name__)
+mailchimp = MailchimpMarketing.Client()
+mailchimp.set_config({
+  'api_key': settings.MAILCHIMP_API_KEY,
+  'server': settings.MAILCHIMP_REGION,
+})
 
 
 def subscribe_view(request):
@@ -93,12 +98,6 @@ def unsubscribe_fail_view(request):
         'message': 'Oops, something went wrong.',
     })
 
-
-mailchimp = MailchimpMarketing.Client()
-mailchimp.set_config({
-  'api_key': settings.MAILCHIMP_API_KEY,
-  'server': settings.MAILCHIMP_REGION,
-})
 
 
 def mailchimp_ping_view(request):

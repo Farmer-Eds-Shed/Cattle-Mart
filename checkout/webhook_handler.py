@@ -58,7 +58,7 @@ class StripeWH_Handler:
 
         billing_details = stripe_charge.billing_details # updated
         shipping_details = intent.shipping
-        order_total = round(stripe_charge.amount / 100, 2) # updated
+        grand_total = round(stripe_charge.amount / 100, 2) # updated
 
         # Clean data in the shipping details
         for field, value in shipping_details.address.items():
@@ -79,7 +79,7 @@ class StripeWH_Handler:
                     street_address1__iexact=shipping_details.address.line1,
                     street_address2__iexact=shipping_details.address.line2,
                     county__iexact=shipping_details.address.state,
-                    order_total=order_total,
+                    grand_total=grand_total,
                     original_trailer=trailer,
                     stripe_pid=pid,
                 )

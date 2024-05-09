@@ -10,6 +10,19 @@ body {
     font-family: 'Lato';
 }
 
+.footer {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    opacity: 0.7;
+    color: white;
+    font-size: 120%;
+    text-align: center;
+  }
+
+
 /* from Bulma */
 .icon {
     align-items: center;
@@ -29,8 +42,10 @@ body {
 
 .newsletter-button {
     background: black;
+    opacity: 0.7;
     color: white;
     min-width: 260px;
+    
 }
 
 .btn-black {

@@ -69,6 +69,7 @@
                             </div>
                         </a>
                         <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                                <a href="{% url 'contact' %}" class="dropdown-item">Contact Cattle Mart</a>
                             {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
                                     <a href="{% url 'add_cattle' %}" class="dropdown-item">Livestock Management</a>
@@ -79,6 +80,7 @@
                                 <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
                                 <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
                             {% endif %}
+                                
                         </div>
                     </li>
                     <li class="list-inline-item">

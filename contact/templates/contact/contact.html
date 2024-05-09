@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <hr>
+            <h2 class="logo-font mb-4">Contact Cattle Mart</h2>
+            <h5 class="text-muted">Leave Feedback</h5>
+            <hr>
+        </div>
+    </div>
+<div class="container">
+  <div class="row">
+      <div class="col-12 mt-3 left">
+      <form method='post' enctype='multipart/form-data'>
+        {{ feedback_form.media }}
+        {{ feedback_form | crispy }}
+        {% csrf_token %}
+        <button class="btn btn-secondary"
+          type="submit">Submit</button>
+      </form>
+      <br>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

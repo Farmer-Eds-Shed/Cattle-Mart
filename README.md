@@ -11,6 +11,7 @@ A catle sales website. Code Institute Portfolio 5 Assessment
 
 ---
 
+Unfortunatly I've run short on time on this project, so I am submitting it as is. I will address the shortcommings in a resubmission if required.
 
 
 ## Contents
@@ -380,6 +381,7 @@ Code to be run through the following validations tools.
 | Bug | Comment |
 |--|--|
 |Order Total not updating in database|To be resolved for resubmission|
+|404 page not working|To be resolved for resubmission|
  
 
 [Back to Top of page](#contents)

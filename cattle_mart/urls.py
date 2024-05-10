@@ -31,4 +31,4 @@ urlpatterns = [
     path("contact/", include("contact.urls"), name="contact.urls"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-handler404 = 'cattle_mart.views.handler404
+handler404 = 'cattle_mart.views.handler404'

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://cattle-mart-42a123405ccb.herokuapp.com/</loc>
+  <lastmod>2024-05-10T08:48:44+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://cattle-mart-42a123405ccb.herokuapp.com/contact/</loc>
+  <lastmod>2024-05-10T08:48:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cattle-mart-42a123405ccb.herokuapp.com/accounts/signup/</loc>
+  <lastmod>2024-05-10T08:48:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cattle-mart-42a123405ccb.herokuapp.com/accounts/login/</loc>
+  <lastmod>2024-05-10T08:48:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cattle-mart-42a123405ccb.herokuapp.com/trailer/</loc>
+  <lastmod>2024-05-10T08:48:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cattle-mart-42a123405ccb.herokuapp.com/cattle/?sort=price&amp;direction=asc</loc>
+  <lastmod>2024-05-10T08:48:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cattle-mart-42a123405ccb.herokuapp.com/cattle/?sort=star_rating&amp;direction=desc</loc>
+  <lastmod>2024-05-10T08:48:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cattle-mart-42a123405ccb.herokuapp.com/cattle/?sort=enterprise&amp;direction=asc</loc>
+  <lastmod>2024-05-10T08:48:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cattle-mart-42a123405ccb.herokuapp.com/cattle/</loc>
+  <lastmod>2024-05-10T08:48:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cattle-mart-42a123405ccb.herokuapp.com/cattle/?enterprise=Dairy&amp;stock_type=Cow</loc>
+  <lastmod>2024-05-10T08:48:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cattle-mart-42a123405ccb.herokuapp.com/cattle/?enterprise=Dairy&amp;stock_type=Heifer</loc>
+  <lastmod>2024-05-10T08:48:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cattle-mart-42a123405ccb.herokuapp.com/cattle/?enterprise=Dairy&amp;stock_type=Calf</loc>
+  <lastmod>2024-05-10T08:48:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cattle-mart-42a123405ccb.herokuapp.com/cattle/?enterprise=Dairy&amp;stock_type=Bull</loc>
+  <lastmod>2024-05-10T08:48:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cattle-mart-42a123405ccb.herokuapp.com/cattle/?enterprise=Beef&amp;stock_type=Cow</loc>
+  <lastmod>2024-05-10T08:48:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cattle-mart-42a123405ccb.herokuapp.com/cattle/?enterprise=Beef&amp;stock_type=Heifer</loc>
+  <lastmod>2024-05-10T08:48:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cattle-mart-42a123405ccb.herokuapp.com/cattle/?enterprise=Beef&amp;stock_type=Calf</loc>
+  <lastmod>2024-05-10T08:48:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cattle-mart-42a123405ccb.herokuapp.com/cattle/?enterprise=Beef&amp;stock_type=Bull</loc>
+  <lastmod>2024-05-10T08:48:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cattle-mart-42a123405ccb.herokuapp.com/cattle/?enterprise=Organic&amp;stock_type=Cow</loc>
+  <lastmod>2024-05-10T08:48:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cattle-mart-42a123405ccb.herokuapp.com/cattle/?enterprise=Organic&amp;stock_type=Heifer</loc>
+  <lastmod>2024-05-10T08:48:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cattle-mart-42a123405ccb.herokuapp.com/cattle/?enterprise=Organic&amp;stock_type=Calf</loc>
+  <lastmod>2024-05-10T08:48:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cattle-mart-42a123405ccb.herokuapp.com/cattle/?enterprise=Organic&amp;stock_type=Bull</loc>
+  <lastmod>2024-05-10T08:48:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cattle-mart-42a123405ccb.herokuapp.com/marketing/</loc>
+  <lastmod>2024-05-10T08:48:44+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://cattle-mart-42a123405ccb.herokuapp.com/accounts/password/reset/</loc>
+  <lastmod>2024-05-10T08:48:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cattle-mart-42a123405ccb.herokuapp.com/cattle/1/</loc>
+  <lastmod>2024-05-10T08:48:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cattle-mart-42a123405ccb.herokuapp.com/cattle/2/</loc>
+  <lastmod>2024-05-10T08:48:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://cattle-mart-42a123405ccb.herokuapp.com/marketing/unsubscribe/</loc>
+  <lastmod>2024-05-10T08:48:44+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>

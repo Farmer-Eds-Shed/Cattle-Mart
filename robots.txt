@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /account/
+Disallow: /trailer/
+sitemap: https://cattle-mart-42a123405ccb.herokuapp.com/sitemap.xml

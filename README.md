@@ -21,7 +21,10 @@ A catle sales website. Code Institute Portfolio 5 Assessment
  1. [ Technology used ](#technology-used) 
  1. [ Testing ](#testing)  
  1. [ Bugs ](#bugs)  
- 1. [ Deployment](#deployment)
+ 1. [ Deployment ](#deployment)
+ 1. [ SEO ](#deployment)
+ 1. [ Marketing ](#deployment)
+ 1. [ Business Model](#deployment)
  1. [ Credits](#credits)
   
 
@@ -355,7 +358,7 @@ Responsiveness testing was performed using:
 
 ### Code Validation
 
-Code has been run through the following validations tools.
+Code to be run through the following validations tools.
 - [W3 HTML Validator](https://validator.w3.org/)
 - [CI Python Linter](https://pep8ci.herokuapp.com/)
 - [W3 CSS Validator](https://jigsaw.w3.org/css-validator/validator.html.en)
@@ -376,6 +379,7 @@ Code has been run through the following validations tools.
 
 | Bug | Comment |
 |--|--|
+|Order Total not updating in database|To be resolved for resubmission|
  
 
 [Back to Top of page](#contents)
@@ -433,6 +437,26 @@ To deploy the project through Heroku follow these steps:
 -   NB: Ensure in Django settings, DEBUG is False
 -   In Heroku, navigate to the deployment tab and deploy the branch manually - watch the build logs for any errors.
 -   Heroku will now build the app for you. Once it has completed the build process you will see a 'Your App Was Successfully Deployed' message and a link to the app to visit the live site.
+
+[Back to Top of page](#contents)
+
+## SEO
+
+<a name="seo"></a>
+
+
+[Back to Top of page](#contents)
+
+## Marketing
+
+<a name="Marketing"></a>
+
+## Business Model
+
+<a name="besiness model"></a>
+
+
+
 
 
 [Back to Top of page](#contents)

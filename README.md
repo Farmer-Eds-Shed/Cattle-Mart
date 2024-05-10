@@ -22,9 +22,9 @@ A catle sales website. Code Institute Portfolio 5 Assessment
  1. [ Testing ](#testing)  
  1. [ Bugs ](#bugs)  
  1. [ Deployment ](#deployment)
- 1. [ SEO ](#deployment)
- 1. [ Marketing ](#deployment)
- 1. [ Business Model](#deployment)
+ 1. [ SEO ](#seo)
+ 1. [ Marketing ](#marketing)
+ 1. [ Business Model](#business)
  1. [ Credits](#credits)
   
 
@@ -449,11 +449,14 @@ To deploy the project through Heroku follow these steps:
 
 ## Marketing
 
-<a name="Marketing"></a>
+<a name="marketing"></a>
+
+
+[Back to Top of page](#contents)
 
 ## Business Model
 
-<a name="besiness model"></a>
+<a name="besiness"></a>
 
 
 

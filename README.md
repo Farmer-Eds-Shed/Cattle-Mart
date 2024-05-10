@@ -5,7 +5,7 @@ A catle sales website. Code Institute Portfolio 5 Assessment
 #### - By FarmerEd
 
 
-![am I responsive screenshot](static/images/readme_img/Cattle-Mart-responsive.png)
+![am I responsive screenshot](media/Responsive.png)
 ### **[Live Site:]([https://agri-hacks-60be548e369f.herokuapp.com/](https://cattle-mart-42a123405ccb.herokuapp.com/))** <br>
 ### [Repository:](https://github.com/Farmer-Eds-Shed/Cattle-Mart/)
 
@@ -34,21 +34,19 @@ A catle sales website. Code Institute Portfolio 5 Assessment
 A visitor to Cattle-Mart would be a farmer looking to purchase animals for any cattle enterprise Beef/Dairy/Organic 
 ### User Stories
 
-#### Epic | Registration
+#### Epic | Site Deployment
+
+#### Epic | User Managment
 - As a Site User I can register an account so that I can comment on and create new blog posts.
 - As a Site Admin I can manage user accounts.
 
-#### Epic | Categories
+#### Epic | Site Navigation
 
+#### Epic | E-Commerce
 
-#### Epic | 
+#### Epic | Marketing
 
-
-#### Epic | 
-
-#### Epic | 
-
-#### Epic | 
+#### Epic | Contact
 
 #### User stories not yet implemented
 The following user stories were scoped out of the project due to time constraints and labelled as "Won't Have Now" on the project board on GitHub. It is intended that these user stories will be implemented later.
@@ -61,27 +59,95 @@ The following user stories were scoped out of the project due to time constraint
 
 
 - Database Schema
-    - #### Category Model
 
+   ### Cattle
+    - #### Enterprise
+        | id | Field |
+        |--|--|
+        |name|CharField|
 
+     - #### StockType
+        | id | Field |
+        |--|--|
+        |name|CharField|
 
-    - #### Post Model
+     - #### Breed
 
-
-
-    - #### Comment Model
-
+        | id | Field |
+        |--|--|
+        |name|CharField|
+        |code|CharField|
       
+    - #### Cattle
+        | id | Field |
+        |--|--|
+        |enterprise|ForeignKey|
+        |stock_type|ForeignKey|
+        |tag||CharField|
+        |name|CharField|
+        |breed|ForeignKey|
+        |description|TextField|
+        |price|IntegerField|
+        |star_rating|IntegerField|
+        |cbv|IntegerField|
+        |image_url|UrlField|
+        |image|ImageField|
+        |sold|BooleanField|
 
-    - #### About Model
+   ### Checkout
+    - #### Order
+        | id | Field |
+        |--|--|
+        |order number|CharField|
+        |user_profile|ForeignKey|
+        |full_name|CharField|
+        |email|EmailField|
+        |phone_number|CharField|
+        |country|CountryField|
+        |postcode|CharField|
+        |town_or_city|CharField|
+        |street_address1|CharField|
+        |street_address2|CharField|
+        |county|CharField|
+        |date|DateTimeField|
+        |delivery_cost|DecimalField| *To Be removed as not used
+        |Order_Total|DecimalField|
+        |Grand_Total|DecimalField| *To Be removed as not used
+        |original_trailer|TextField|
+        |stripe_PID|CharField
 
-   
+    - #### OrderLineItem
+        | id | Field |
+        |--|--|
+        |order|ForeignKey|
+        |cattleForeignKey|
+        |quantity|IntegerField|
+        |line_item_total|DecimalField
+        |Read|BooleanField|
 
-    - #### Issues Model
 
+   ### Contact
+    - #### Feedback
+        | id | Field |
+        |--|--|
+        |issue|ForeignKey
+        |name|CharField|
+        |email|EmailField|
+        |message|TextField|
 
+   ### Profile
+    - #### UserProfile
+        | id | Field |
+        |--|--|
+        |user|OneToOneField
+        |default_phone_number|CharField|
+        |default_country|CountryField|
+        |default_postcode|CharField|
+        |default_town_or_city|CharField|
+        |default_street_address1|CharField|
+        |default_street_address2|CharField|
+        |default_county|CharField|
 
-    - #### Feedback Model
 
 
 

@@ -444,12 +444,18 @@ To deploy the project through Heroku follow these steps:
 
 <a name="seo"></a>
 
+- A robots.txt file
+- A sitemap.xml file
+- Descriptive meta tags
+
 
 [Back to Top of page](#contents)
 
 ## Marketing
 
 <a name="marketing"></a>
+
+- Implemented Mailchip Subscribe and Usubscribe form using
 
 
 [Back to Top of page](#contents)
@@ -458,6 +464,9 @@ To deploy the project through Heroku follow these steps:
 
 <a name="besiness"></a>
 
+B2B Site for farmers to purchase stock from a Livestock Dealer
+
+More to come .............
 
 
 
@@ -474,6 +483,7 @@ To deploy the project through Heroku follow these steps:
 - [Django Docs](https://docs.djangoproject.com/en/5.0/) - Django
 - [Favicon.io](https://favicon.io/") - Favicon
 - [Code Institute WalkThroughs](https://learn.codeinstitute.net/dashboard) - Boiler plate code and more.
+- [MailChimp Marketing]("https://testdriven.io/blog/django-mailchimp/") - Mailchimp subscribe/unsubscribe form
 
 
 

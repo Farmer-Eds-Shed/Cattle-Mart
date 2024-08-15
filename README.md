@@ -5,12 +5,13 @@ A catle sales website. Code Institute Portfolio 5 Assessment
 #### - By FarmerEd
 
 
-![am I responsive screenshot](static/images/readme_img/Cattle-Mart-responsive.png)
+![am I responsive screenshot](media/Responsive.png)
 ### **[Live Site:]([https://agri-hacks-60be548e369f.herokuapp.com/](https://cattle-mart-42a123405ccb.herokuapp.com/))** <br>
 ### [Repository:](https://github.com/Farmer-Eds-Shed/Cattle-Mart/)
 
 ---
 
+Unfortunatly I've run short on time on this project, so I am submitting it as is. I will address the shortcommings in a resubmission if required.
 
 
 ## Contents
@@ -21,7 +22,10 @@ A catle sales website. Code Institute Portfolio 5 Assessment
  1. [ Technology used ](#technology-used) 
  1. [ Testing ](#testing)  
  1. [ Bugs ](#bugs)  
- 1. [ Deployment](#deployment)
+ 1. [ Deployment ](#deployment)
+ 1. [ SEO ](#seo)
+ 1. [ Marketing ](#marketing)
+ 1. [ Business Model](#business)
  1. [ Credits](#credits)
   
 
@@ -34,21 +38,19 @@ A catle sales website. Code Institute Portfolio 5 Assessment
 A visitor to Cattle-Mart would be a farmer looking to purchase animals for any cattle enterprise Beef/Dairy/Organic 
 ### User Stories
 
-#### Epic | Registration
+#### Epic | Site Deployment
+
+#### Epic | User Managment
 - As a Site User I can register an account so that I can comment on and create new blog posts.
 - As a Site Admin I can manage user accounts.
 
-#### Epic | Categories
+#### Epic | Site Navigation
 
+#### Epic | E-Commerce
 
-#### Epic | 
+#### Epic | Marketing
 
-
-#### Epic | 
-
-#### Epic | 
-
-#### Epic | 
+#### Epic | Contact
 
 #### User stories not yet implemented
 The following user stories were scoped out of the project due to time constraints and labelled as "Won't Have Now" on the project board on GitHub. It is intended that these user stories will be implemented later.
@@ -61,27 +63,95 @@ The following user stories were scoped out of the project due to time constraint
 
 
 - Database Schema
-    - #### Category Model
 
+   ### Cattle
+    - #### Enterprise
+        | id | Field |
+        |--|--|
+        |name|CharField|
 
+     - #### StockType
+        | id | Field |
+        |--|--|
+        |name|CharField|
 
-    - #### Post Model
+     - #### Breed
 
-
-
-    - #### Comment Model
-
+        | id | Field |
+        |--|--|
+        |name|CharField|
+        |code|CharField|
       
+    - #### Cattle
+        | id | Field |
+        |--|--|
+        |enterprise|ForeignKey|
+        |stock_type|ForeignKey|
+        |tag||CharField|
+        |name|CharField|
+        |breed|ForeignKey|
+        |description|TextField|
+        |price|IntegerField|
+        |star_rating|IntegerField|
+        |cbv|IntegerField|
+        |image_url|UrlField|
+        |image|ImageField|
+        |sold|BooleanField|
 
-    - #### About Model
+   ### Checkout
+    - #### Order
+        | id | Field |
+        |--|--|
+        |order number|CharField|
+        |user_profile|ForeignKey|
+        |full_name|CharField|
+        |email|EmailField|
+        |phone_number|CharField|
+        |country|CountryField|
+        |postcode|CharField|
+        |town_or_city|CharField|
+        |street_address1|CharField|
+        |street_address2|CharField|
+        |county|CharField|
+        |date|DateTimeField|
+        |delivery_cost|DecimalField| *To Be removed as not used
+        |Order_Total|DecimalField|
+        |Grand_Total|DecimalField| *To Be removed as not used
+        |original_trailer|TextField|
+        |stripe_PID|CharField
 
-   
+    - #### OrderLineItem
+        | id | Field |
+        |--|--|
+        |order|ForeignKey|
+        |cattleForeignKey|
+        |quantity|IntegerField|
+        |line_item_total|DecimalField
+        |Read|BooleanField|
 
-    - #### Issues Model
 
+   ### Contact
+    - #### Feedback
+        | id | Field |
+        |--|--|
+        |issue|ForeignKey
+        |name|CharField|
+        |email|EmailField|
+        |message|TextField|
 
+   ### Profile
+    - #### UserProfile
+        | id | Field |
+        |--|--|
+        |user|OneToOneField
+        |default_phone_number|CharField|
+        |default_country|CountryField|
+        |default_postcode|CharField|
+        |default_town_or_city|CharField|
+        |default_street_address1|CharField|
+        |default_street_address2|CharField|
+        |default_county|CharField|
 
-    - #### Feedback Model
 
 
 
@@ -289,7 +359,7 @@ Responsiveness testing was performed using:
 
 ### Code Validation
 
-Code has been run through the following validations tools.
+Code to be run through the following validations tools.
 - [W3 HTML Validator](https://validator.w3.org/)
 - [CI Python Linter](https://pep8ci.herokuapp.com/)
 - [W3 CSS Validator](https://jigsaw.w3.org/css-validator/validator.html.en)
@@ -310,6 +380,8 @@ Code has been run through the following validations tools.
 
 | Bug | Comment |
 |--|--|
+|Order Total not updating in database|To be resolved for resubmission|
+|404 page not working|To be resolved for resubmission|
  
 
 [Back to Top of page](#contents)
@@ -368,6 +440,38 @@ To deploy the project through Heroku follow these steps:
 -   In Heroku, navigate to the deployment tab and deploy the branch manually - watch the build logs for any errors.
 -   Heroku will now build the app for you. Once it has completed the build process you will see a 'Your App Was Successfully Deployed' message and a link to the app to visit the live site.
 
+[Back to Top of page](#contents)
+
+## SEO
+
+<a name="seo"></a>
+
+- A robots.txt file
+- A sitemap.xml file
+- Descriptive meta tags
+
+
+[Back to Top of page](#contents)
+
+## Marketing
+
+<a name="marketing"></a>
+
+- Implemented Mailchip Subscribe and Usubscribe form using
+
+
+[Back to Top of page](#contents)
+
+## Business Model
+
+<a name="besiness"></a>
+
+B2B Site for farmers to purchase stock from a Livestock Dealer
+
+More to come .............
+
+
+
 
 [Back to Top of page](#contents)
 
@@ -381,6 +485,7 @@ To deploy the project through Heroku follow these steps:
 - [Django Docs](https://docs.djangoproject.com/en/5.0/) - Django
 - [Favicon.io](https://favicon.io/") - Favicon
 - [Code Institute WalkThroughs](https://learn.codeinstitute.net/dashboard) - Boiler plate code and more.
+- [MailChimp Marketing]("https://testdriven.io/blog/django-mailchimp/") - Mailchimp subscribe/unsubscribe form
 
 
 

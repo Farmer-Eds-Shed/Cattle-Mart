@@ -1,1 +1,1 @@
-Cattle Mart Confirmation for Order Number {{ order.order_number }}
+Cattle Mart Confirmation for Order Number {{ total | floatformat:2 }}

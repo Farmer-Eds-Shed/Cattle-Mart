@@ -108,6 +108,7 @@ class StripeWH_Handler:
                     county=shipping_details.address.state,
                     original_trailer=trailer,
                     stripe_pid=pid,
+                    order_total=order_total, #for test
                 )
                 for item_id, item_data in json.loads(trailer).items():
                     cattle = Cattle.objects.get(id=item_id)

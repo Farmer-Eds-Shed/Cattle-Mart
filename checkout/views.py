@@ -70,7 +70,8 @@ def checkout(request):
                             quantity=item_data,
                         )
                         order_line_item.save()
-                        print(order_line_item)
+                        print(order_line_item.quantity)
+                        print(item_data)
 
                 except Cattle.DoesNotExist:
                     messages.error(request, (

@@ -90,7 +90,7 @@ def checkout(request):
             return redirect(reverse('cattle'))
 
         current_trailer = trailer_contents(request)
-        total = current_trailer['order_total']
+        total = current_trailer['total']
 
 
         stripe_total = round(total * 100)

@@ -58,11 +58,10 @@ def checkout(request):
             order.stripe_pid = pid
             order.original_trailer = json.dumps(trailer)
             order.save()
-            print("test 1")
+
             for item_id, item_data in trailer.items():
                 try:
                     cattle = Cattle.objects.get(id=item_id)
-                    print("test 2")
                     if isinstance(item_data, int):
                         order_line_item = OrderLineItem(
                             order=order,
@@ -70,8 +69,6 @@ def checkout(request):
                             quantity=item_data,
                         )
                         order_line_item.save()
-                        print(order_line_item.quantity)
-                        print(item_data)
 
                 except Cattle.DoesNotExist:
                     messages.error(request, (

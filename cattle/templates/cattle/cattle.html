@@ -23,54 +23,53 @@
                 <div class="row mt-1 mb-2"></div>
                 <div class="row">
                     {% for cattle in cattle %}
-                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                            <div class="card h-100 border-0">
-                                {% if cattle.image %}
-                                <a href="{% url 'cattle_detail' cattle.id %}">
-                                    <img class="card-img-top img-fluid" src="{{ cattle.image.url }}" alt="{{ cattle.name }}">
-                                </a>
-                                {% else %}
-                                <a href="{% url 'cattle_detail' cattle.id %}">
-                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ cattle.name }}">
-                                </a>
-                                {% endif %}
-                                <div class="card-body pb-0">
-                                    <p class="mb-0">{{ cattle.name }}</p>
-                                </div>
-                                <div class="card-footer bg-white pt-0 border-0 text-left">
-                                    <div class="row">
-                                        <div class="col">
-                                            <p class="lead mb-0 text-left font-weight-bold">${{ cattle.price }}</p>
-                                            {% if cattle.star_rating %}
-                                                <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ cattle.star_rating }} / 5</small>
-                                            {% else %}
-                                                <small class="text-muted">No Rating</small>
-                                            {% endif %}
-                                        </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <div class="image-container">
+                                    <div class="aspect-ratio-box">
+                                        {% if cattle.image %}
+                                        <a href="{% url 'cattle_detail' cattle.id %}">
+                                            <img class="card-img-top img-fluid" src="{{ cattle.image.url }}" alt="{{ cattle.name }}">
+                                        </a>
+                                        {% else %}
+                                        <a href="{% url 'cattle_detail' cattle.id %}">
+                                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ cattle.name }}">
+                                        </a>
+                                        {% endif %}
                                     </div>
                                 </div>
+                                <a href="{% url 'cattle_detail' cattle.id %}" class="post-link">
+                                    <p>Price: € {{ cattle.price }}</p>
+                                </a>
+    
+                                <hr>
+                                {% if cattle.star_rating <= 5 %}
+                                    <small class="text-muted">ICBF:
+                                        <i class="fas fa-star mr-1"></i>
+                                        {% if cattle.star_rating > 1 %}
+                                        <i class="fas fa-star mr-1"></i>
+                                        {% endif %}
+                                        {% if cattle.star_rating > 2 %}
+                                        <i class="fas fa-star mr-1"></i>
+                                        {% endif %}
+                                        {% if cattle.star_rating > 3 %}
+                                        <i class="fas fa-star mr-1"></i>
+                                        {% endif %}
+                                        {% if cattle.star_rating > 4  %}
+                                        <i class="fas fa-star mr-1"></i>
+                                        {% endif %}
+                                    </small>
+                                {% else %}    
+                                    <small class="text-muted">ICBF:</small>
+                                {% endif %}
                             </div>
                         </div>
-                        {% if forloop.counter|divisibleby:1 %}
-                            <div class="col-12 d-sm-none mb-5">
-                                <hr>
-                            </div>
-                        {% endif %}                        
-                        {% if forloop.counter|divisibleby:2 %}
-                            <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
-                                <hr>
-                            </div>
-                        {% endif %}
-                        {% if forloop.counter|divisibleby:3 %}
-                            <div class="col-12 d-none d-lg-block d-xl-none mb-5">
-                                <hr>
-                            </div>
-                        {% endif %}
-                        {% if forloop.counter|divisibleby:4 %}
-                            <div class="col-12 d-none d-xl-block mb-5">
-                                <hr>
-                            </div>
-                        {% endif %}
+                    </div>
+                    {% if forloop.counter|divisibleby:3 %}
+                </div>
+                <div class="row">
+                    {% endif %}
                     {% endfor %}
                 </div>
             </div>

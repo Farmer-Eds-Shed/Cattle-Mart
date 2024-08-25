@@ -86,7 +86,7 @@ def checkout(request):
                         "Animal has already been sold")
                     )
                     order.delete()
-                    return redirect(reverse('trailer'))
+                    return redirect(reverse('view_trailer'))
 
             # Save the info to the user's profile if all is well
             request.session['save_info'] = 'save-info' in request.POST

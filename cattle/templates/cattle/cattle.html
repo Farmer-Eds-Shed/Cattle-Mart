@@ -31,10 +31,17 @@
                                         {% if cattle.image %}
                                         <a href="{% url 'cattle_detail' cattle.id %}">
                                             <img class="card-img-top img-fluid" src="{{ cattle.image.url }}" alt="{{ cattle.name }}">
+                                            {% if cattle.sold %}
+                                            <p class = "card-img-overlay bg-danger h-25 w-100 text-white mt-5 text-center">SOLD!</p>
+                                            {% endif %}
                                         </a>
+
                                         {% else %}
                                         <a href="{% url 'cattle_detail' cattle.id %}">
                                             <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ cattle.name }}">
+                                            {% if cattle.sold %}
+                                            <p class = "card-img-overlay bg-danger h-25 w-100 text-white mt-5 text-center">SOLD!</p>
+                                            {% endif %}
                                         </a>
                                         {% endif %}
                                     </div>

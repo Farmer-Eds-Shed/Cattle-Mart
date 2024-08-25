@@ -62,17 +62,18 @@ def checkout(request):
             for item_id, item_data in trailer.items():
                 try:
                     cattle = Cattle.objects.get(id=item_id)
-                    if isinstance(item_data, int):
-                        order_line_item = OrderLineItem(
-                            order=order,
-                            cattle=cattle,
-                            quantity=item_data,
-                        )
-                        order_line_item.save()
+                    if cattle.sold !=True:
+                        if isinstance(item_data, int):
+                            order_line_item = OrderLineItem(
+                                order=order,
+                                cattle=cattle,
+                                quantity=item_data,
+                            )
+                            order_line_item.save()
 
                 except Cattle.DoesNotExist:
                     messages.error(request, (
-                        "One of the Catttle in your trailer wasn't found in our database. "
+                        "There is an issue with one of the cattle in your trailer. "
                         "Please call us for assistance!")
                     )
                     order.delete()

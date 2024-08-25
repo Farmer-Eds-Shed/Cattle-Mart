@@ -19,17 +19,27 @@
                     {% if cattle.image %}
                         <a href="{{ cattle.image.url }}" target="_blank">
                             <img class="card-img-top img-fluid" src="{{ cattle.image.url }}" alt="{{ cattle.name }}">
+                            {% if cattle.sold %}
+                            <h1 class = "card-img-overlay bg-danger h-25 w-100 text-white mt-auto">SOLD!</h1>
+                            {% endif %}
                         </a>
                         {% else %}
                         <a href="">
                             <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ cattle.name }}">
+                            {% if cattle.sold %}
+                            <h1 class = "card-img-overlay bg-danger h-25 w-100 text-white mt-auto">SOLD!</h1>
+                            {% endif %}
                         </a>
                     {% endif %}
+                    
                     </div>
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="cattle-details-container mb-5 mt-md-5">
+                    {% if cattle.sold %}
+                        <p class="lead mb-0 text-left font-weight-bold">Animal is Sold!</p>
+                    {% endif %}
                     {% if cattle.name %}
                         <p class="mb-0">Pedigree Name:{{ cattle.name }}</p>
                     {% endif %}
@@ -72,7 +82,9 @@
                                     </span>
                                     <span class="text-uppercase">Keep Shopping</span>
                                 </a>
+                                {% if cattle.sold == False %}
                                 <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Trailer">
+                                {% endif %}
                             </div>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </div>

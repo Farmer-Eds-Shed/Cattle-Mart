@@ -57,7 +57,7 @@ def checkout(request):
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
             order.original_trailer = json.dumps(trailer)
-            order.save()
+            order.save(commit=False)
 
             for item_id, item_data in trailer.items():
                 try:
@@ -74,19 +74,21 @@ def checkout(request):
 
                 except Cattle.DoesNotExist:
                     messages.error(request, (
-                        "There is an issue with one of the cattle in your trailer."
+                        "There is an issue with one of the cattle in your trailer. "
                         "Please call us for assistance!")
                     )
                     order.delete()
-                    return redirect(reverse('trailer'))
+                    return redirect(reverse('view_trailer'))
                 
                 except ValueError:
                     messages.error(request, (
-                        "There is an issue with one of the cattle in your trailer."
+                        "There is an issue with one of the cattle in your trailer. "
                         "Animal has already been sold")
                     )
                     order.delete()
                     return redirect(reverse('view_trailer'))
+            
+            order.save()
 
             # Save the info to the user's profile if all is well
             request.session['save_info'] = 'save-info' in request.POST

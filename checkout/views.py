@@ -58,7 +58,7 @@ def checkout(request):
                 animal_sold = True
         order_form = OrderForm(form_data)
         if order_form.is_valid():
-            if animal_sold:
+            if animal_sold != True:
                 order = order_form.save(commit=False)
                 pid = request.POST.get('client_secret').split('_secret')[0]
                 order.stripe_pid = pid
@@ -85,7 +85,11 @@ def checkout(request):
                         )
                         order.delete()
                         return redirect(reverse('view_trailer'))
-                
+
+            else: 
+                messages.error(request, "Animal in trailer no longer available for sale")
+                return redirect(reverse('view_trailer'))
+                  
 
             # Save the info to the user's profile if all is well
             request.session['save_info'] = 'save-info' in request.POST

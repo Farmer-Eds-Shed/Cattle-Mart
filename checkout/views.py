@@ -76,6 +76,7 @@ def checkout(request):
                 try:
                     cattle = Cattle.objects.get(id=item_id)
                     cattle.sold = True
+                    cattle.save()
                     if isinstance(item_data, int):
                         order_line_item = OrderLineItem(
                             order=order,

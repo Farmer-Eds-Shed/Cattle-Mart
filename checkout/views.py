@@ -75,6 +75,7 @@ def checkout(request):
             for item_id, item_data in trailer.items():
                 try:
                     cattle = Cattle.objects.get(id=item_id)
+                    cattle.sold = True
                     if isinstance(item_data, int):
                         order_line_item = OrderLineItem(
                             order=order,

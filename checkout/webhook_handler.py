@@ -126,8 +126,6 @@ class StripeWH_Handler:
                 )
                 for item_id, item_data in json.loads(trailer).items():
                     cattle = Cattle.objects.get(id=item_id)
-                    if cattle.sold:
-                        raise ValueError
                     if isinstance(item_data, int):
                         order_line_item = OrderLineItem(
                             order=order,
@@ -136,13 +134,6 @@ class StripeWH_Handler:
                         )
                         order_line_item.save()
 
-            except ValueError as e:
-                if order:
-                    order.delete()
-                return HttpResponse(
-                    content=f'Webhook received: {event["type"]} | ERROR: {e}',
-                    status=500)
-            
             except Exception as e:
                 if order:
                     order.delete()

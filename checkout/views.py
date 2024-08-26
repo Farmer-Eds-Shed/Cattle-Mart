@@ -57,13 +57,24 @@ def checkout(request):
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
             order.original_trailer = json.dumps(trailer)
-            order.save()
-
             for item_id, item_data in trailer.items():
                 try:
                     cattle = Cattle.objects.get(id=item_id)
                     if cattle.sold:
                         raise ValueError
+                    
+                except ValueError:
+                    messages.error(request, (
+                        "There is an issue with one of the cattle in your trailer. "
+                        "Animal has already been sold")
+                    )
+                    order.delete()
+                    return redirect(reverse('view_trailer'))
+            order.save()
+
+            for item_id, item_data in trailer.items():
+                try:
+                    cattle = Cattle.objects.get(id=item_id)
                     if isinstance(item_data, int):
                         order_line_item = OrderLineItem(
                             order=order,
@@ -80,13 +91,7 @@ def checkout(request):
                     order.delete()
                     return redirect(reverse('view_trailer'))
                 
-                except ValueError:
-                    messages.error(request, (
-                        "There is an issue with one of the cattle in your trailer. "
-                        "Animal has already been sold")
-                    )
-                    order.delete()
-                    return redirect(reverse('view_trailer'))
+
             
             
 

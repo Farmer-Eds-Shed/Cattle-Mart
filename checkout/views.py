@@ -57,7 +57,6 @@ def checkout(request):
             pid = request.POST.get('client_secret').split('_secret')[0]
             order.stripe_pid = pid
             order.original_trailer = json.dumps(trailer)
-            order.save(commit=False)
 
             for item_id, item_data in trailer.items():
                 try:

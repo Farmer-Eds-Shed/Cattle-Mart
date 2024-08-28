@@ -4,18 +4,18 @@ from django.shortcuts import render, redirect
 from cattle_mart import settings
 from marketing.forms import EmailForm
 
-#import mailchimp_marketing as MailchimpMarketing
-#from mailchimp_marketing.api_client import ApiClientError
+import mailchimp_marketing as MailchimpMarketing
+from mailchimp_marketing.api_client import ApiClientError
 
-#import hashlib
-#import logging
+import hashlib
+import logging
 
-#logger = logging.getLogger(__name__)
-#mailchimp = MailchimpMarketing.Client()
-#mailchimp.set_config({
-#  'api_key': settings.MAILCHIMP_API_KEY,
-#  'server': settings.MAILCHIMP_REGION,
-#})
+logger = logging.getLogger(__name__)
+mailchimp = MailchimpMarketing.Client()
+mailchimp.set_config({
+  'api_key': settings.MAILCHIMP_API_KEY,
+  'server': settings.MAILCHIMP_REGION,
+})
 
 
 def subscribe_view(request):

@@ -51,8 +51,9 @@
                             {% if animal.cattle.name%}
                             <p class="my-0"><strong>{{ animal.cattle.name }}</strong></p>
                             {% endif %}
+                            <p class="my-0"><strong>{{ animal.cattle.tag }}</strong></p>
                             {% if animal.cattle.sold%}
-                            <p class="my-0 small text-warning">Animal already sold</p>
+                            <p class="my-0 small text-danger"><strong>Animal already sold!</strong></p>
                             {% endif %}
                         </div>
                         <div class="col-3 text-right">

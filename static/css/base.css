@@ -237,6 +237,10 @@ header {
     height: auto;
 }
 
+.fieldset-label {
+    background-color: rgb(192, 235, 188);
+}
+
 
 /* -------------------------------- Media Queries */
 

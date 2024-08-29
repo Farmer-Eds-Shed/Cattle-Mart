@@ -118,7 +118,7 @@
 							</span>
 							<span class="font-weight-bold">Adjust Trailer</span>
 						</a>
-                        {% if cattle_sold == False %}
+                        {% if animal_sold == False %}
 						<button id="submit-button" class="btn btn-black rounded-0">
 							<span class="font-weight-bold">Complete Order</span>
 							<span class="icon">
@@ -136,7 +136,7 @@
 							<span class="icon">
 								<i class="fas fa-exclamation-circle"></i>
 							</span>
-							<span>There is an issue with one of the Animals in your trailer!<strong>€{{ total|floatformat:2 }}</strong></span>
+							<span>There is an issue with one of the Animals in your trailer! {{  }}</span>
 						</p>
                         {% endif %}
 					</div>

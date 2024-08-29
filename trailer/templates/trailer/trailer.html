@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 
+
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -34,10 +35,10 @@
                                     <th scope="col">Tag</th>
                                     <th scope="col">ICBF Star Rating</th>
                                     <th scope="col">CBV</th>
+                                    
 
                                 </tr>
                             </thead>
-
                             {% for animal in trailer_cattle %}
                                 <tr>
                                     <td class="p-3 w-25">
@@ -61,9 +62,15 @@
                                     <td class="py-3">
                                         <p class="my-0">{{ animal.cattle.cbv }}</p>
                                     </td>
+                                    {% if animal.cattle.sold %}
+                                    <td class="py-3 w-25">
+                                        <a class="remove-cattle text-white bg-danger float-right" id="remove_{{ animal.cattle_id }}/">Animal Already Sold Remove!</a>
+                                    </td>
+                                    {% else %}
                                     <td class="py-3 w-25">
                                         <a class="remove-cattle text-danger float-right" id="remove_{{ animal.cattle_id }}/"><small>Remove</small></a>
                                     </td>
+                                    {% endif %}
                                 </tr>
                             {% endfor %}
                             <tr>
@@ -80,15 +87,17 @@
                                         </span>
                                         <span class="text-uppercase">Keep Shopping</span>
                                     </a>
+                                    {% if animal_sold == False %}
                                     <a href="{% url 'checkout' %}" class="btn btn-black rounded-0 btn-lg">
                                         <span class="text-uppercase">Secure Checkout</span>
                                         <span class="icon">
                                             <i class="fas fa-lock"></i>
                                         </span>
                                     </a>
+                                    {% endif %}
                                 </td>
                             </tr>
-                        </table>
+                        </table>    
                     </div>
 
                 {% else %}

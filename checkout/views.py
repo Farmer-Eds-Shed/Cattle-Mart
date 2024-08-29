@@ -51,44 +51,38 @@ def checkout(request):
             'county': request.POST['county'],
         }
         
-        animal_sold = False
+    
         for item_id, item_data in trailer.items():
             cattle = Cattle.objects.get(id=item_id)
-            if cattle.sold:
-                animal_sold = True
         order_form = OrderForm(form_data)
         if order_form.is_valid():
-            if animal_sold != True:
-                order = order_form.save(commit=False)
-                pid = request.POST.get('client_secret').split('_secret')[0]
-                order.stripe_pid = pid
-                order.original_trailer = json.dumps(trailer)
-                order.save()
+            order = order_form.save(commit=False)
+            pid = request.POST.get('client_secret').split('_secret')[0]
+            order.stripe_pid = pid
+            order.original_trailer = json.dumps(trailer)
+            order.save()
 
-                for item_id, item_data in trailer.items():
-                    try:
-                        cattle = Cattle.objects.get(id=item_id)
-                        cattle.sold = True
-                        cattle.save()
-                        if isinstance(item_data, int):
-                            order_line_item = OrderLineItem(
-                                order=order,
-                                cattle=cattle,
-                                quantity=item_data,
-                            )
-                            order_line_item.save()
-
-                    except Cattle.DoesNotExist:
-                        messages.error(request, (
-                            "There is an issue with one of the cattle in your trailer. "
-                            "Please call us for assistance!")
+            for item_id, item_data in trailer.items():
+                try:
+                    cattle = Cattle.objects.get(id=item_id)
+                    cattle.sold = True
+                    cattle.save()
+                    if isinstance(item_data, int):
+                        order_line_item = OrderLineItem(
+                            order=order,
+                            cattle=cattle,
+                            quantity=item_data,
                         )
-                        order.delete()
-                        return redirect(reverse('view_trailer'))
+                        order_line_item.save()
 
-            else: 
-                messages.error(request, "Animal in trailer no longer available for sale")
-                return redirect(reverse('view_trailer'))
+                except Cattle.DoesNotExist:
+                    messages.error(request, (
+                        "There is an issue with one of the cattle in your trailer. "
+                        "Please call us for assistance!")
+                    )
+                    order.delete()
+                    return redirect(reverse('view_trailer'))
+
                   
 
             # Save the info to the user's profile if all is well

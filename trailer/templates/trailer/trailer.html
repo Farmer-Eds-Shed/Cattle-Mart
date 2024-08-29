@@ -32,7 +32,7 @@
                                     <th scope="col">Breed</th>
                                     <th scope="col">Tag</th>
                                     <th scope="col">ICBF</th>
-                                    <th scope="col">CBV</th>
+                                    <th class="d-none d-md-block" scope="col ">CBV</th>
                                 </tr>
                             </thead>
                             {% for animal in trailer_cattle %}
@@ -42,7 +42,8 @@
                                         <p class="my-0">€{{ animal.cattle.price }}</p>
                                     </td>
                                     <td class="py-3">
-                                        <p class="my-0">{{ animal.cattle.breed }}</p>
+                                        <p class="my-0">{{ animal.cattle.breed.code }}</p>
+                                        <p class="my-0 d-none d-md-block">{{ animal.cattle.breed }}</p>
                                     </td>
                                     <td class="py-3">
                                         <p class="my-0">{{ animal.cattle.tag }}</p>
@@ -50,7 +51,7 @@
                                     <td class="py-3">
                                         <p class="my-0">{{ animal.cattle.star_rating }}</p>
                                     </td>
-                                    <td class="py-3">
+                                    <td class="py-3 d-none d-md-block">
                                         <p class="my-0">{{ animal.cattle.cbv }}</p>
                                     </td>
                                     {% if animal.cattle.sold %}
@@ -76,11 +77,11 @@
                                         <span class="icon">
                                             <i class="fas fa-chevron-left"></i>
                                         </span>
-                                        <span class="text-uppercase">Keep Shopping</span>
+                                        <span class="text-uppercase">Back to Mart</span>
                                     </a>
                                     {% if animal_sold == False %}
                                     <a href="{% url 'checkout' %}" class="btn btn-black rounded-0 btn-lg">
-                                        <span class="text-uppercase">Secure Checkout</span>
+                                        <span class="text-uppercase">Checkout</span>
                                         <span class="icon">
                                             <i class="fas fa-lock"></i>
                                         </span>

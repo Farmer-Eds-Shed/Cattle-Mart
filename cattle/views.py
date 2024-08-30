@@ -54,10 +54,10 @@ def all_cattle(request):
                     )
                 return redirect(reverse('cattle'))
 
-            queries =  (
-                Q(name__icontains=query) 
-                | Q(description__icontains=query) 
-                | Q(stock_type__name__icontains=query) 
+            queries = (
+                Q(name__icontains=query)
+                | Q(description__icontains=query)
+                | Q(stock_type__name__icontains=query)
                 | Q(enterprise__name__icontains=query)
                 )
             cattle = cattle.filter(queries)
@@ -85,6 +85,7 @@ def cattle_detail(request, cattle_id):
 
     return render(request, 'cattle/cattle_detail.html', context)
 
+
 @login_required
 def add_cattle(request):
     """ Add cattle to mart """
@@ -99,16 +100,20 @@ def add_cattle(request):
             messages.success(request, 'Successfully added animal!')
             return redirect(reverse('add_cattle'))
         else:
-            messages.error(request, 'Failed to add animal. Please ensure the form is valid.')
+            messages.error(
+                request,
+                'Failed to add animal. Please ensure the form is valid.'
+                )
     else:
         form = CattleForm()
-    
+
     template = 'cattle/add_cattle.html'
     context = {
         'form': form,
     }
 
     return render(request, template, context)
+
 
 @login_required
 def edit_cattle(request, animal_id):
@@ -125,7 +130,10 @@ def edit_cattle(request, animal_id):
             messages.success(request, 'Successfully updated animal!')
             return redirect(reverse('cattle_detail', args=[animal.id]))
         else:
-            messages.error(request, 'Failed to update animal. Please ensure the form is valid.')
+            messages.error(
+                request,
+                'Failed to update animal. Please ensure the form is valid.'
+                )
     else:
         form = CattleForm(instance=animal)
         messages.info(request, f'You are editing {animal.tag}')

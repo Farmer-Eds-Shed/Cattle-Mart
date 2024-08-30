@@ -44,6 +44,9 @@
                         <p class="mb-0">Pedigree Name:{{ cattle.name }}</p>
                     {% endif %}
                         <p class="lead mb-0 text-left font-weight-bold">Price: €{{ cattle.price }}</p>
+                        <p class="mt-3">{{ cattle.breed }}</p>
+                        <p class="mt-3">{{ cattle.enterprise }}</p>
+                        <p class="mt-3">{{ cattle.stock_type }}</p>
                         <p class="mt-3">{{ cattle.description }}</p>
                     {% if cattle.cbv %}
                         <p data-toggle="tooltip" data-placement="right" title="The CBV is a tool that gives farmers an insight into the genetic value of animals destined for beef production. It comprises traits that are of economic importance to a non-breeding (drystock) farmer, such as carcass weight, conformation and feed intake.">

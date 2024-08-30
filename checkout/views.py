@@ -1,4 +1,6 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import (render, redirect, reverse,
+                              get_object_or_404, HttpResponse
+                              )
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
@@ -50,8 +52,7 @@ def checkout(request):
             'street_address2': request.POST['street_address2'],
             'county': request.POST['county'],
         }
-        
-    
+
         for item_id, item_data in trailer.items():
             cattle = Cattle.objects.get(id=item_id)
         order_form = OrderForm(form_data)
@@ -77,29 +78,30 @@ def checkout(request):
 
                 except Cattle.DoesNotExist:
                     messages.error(request, (
-                        "There is an issue with one of the cattle in your trailer. "
-                        "Please call us for assistance!")
+                        "There is an issue with one of the cattle in your "
+                        "trailer. Please call us for assistance!")
                     )
                     order.delete()
                     return redirect(reverse('view_trailer'))
 
-                  
-
             # Save the info to the user's profile if all is well
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(
+                reverse('checkout_success', args=[order.order_number])
+                )
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
     else:
         trailer = request.session.get('trailer', {})
         if not trailer:
-            messages.error(request, "There's nothing in your trailer at the moment")
+            messages.error(
+                request, "There's nothing in your trailer at the moment"
+                )
             return redirect(reverse('cattle'))
 
         current_trailer = trailer_contents(request)
         total = current_trailer['total']
-
 
         stripe_total = round(total * 100)
         stripe.api_key = stripe_secret_key
@@ -108,7 +110,8 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY,
         )
 
-        # Attempt to prefill the form with any info the user maintains in their profile
+        # Attempt to prefill the form with any info the
+        # user maintains in their profile
         if request.user.is_authenticated:
             try:
                 profile = UserProfile.objects.get(user=request.user)

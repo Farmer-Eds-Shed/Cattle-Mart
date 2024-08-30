@@ -49,9 +49,9 @@
                                 <a href="{% url 'cattle_detail' cattle.id %}" class="post-link">
                                     <p>Price: € {{ cattle.price }}</p>
                                 </a>
-                                <span>Breed: {{ cattle.breed }}</span>
-                                <span>Enterprise: {{ cattle.enterprise }}</span>
-                                <span>Type: {{ cattle.stock_type }}</span>
+                                <p>Breed: {{ cattle.breed }}</p>
+                                <p>Enterprise: {{ cattle.enterprise }}</p>
+                                <p>Type: {{ cattle.stock_type }}</p>
                                 <hr>
                                 {% if cattle.star_rating <= 5 %}
                                     <small class="text-muted">ICBF:

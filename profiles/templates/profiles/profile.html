@@ -46,7 +46,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {% for order in orders reversed %}
+                            {% for order in orders %}
                                 <tr>
                                     <td>
                                         <a href="{% url 'order_history' order.order_number %}"
@@ -63,7 +63,7 @@
                                             {% endfor %}
                                         </ul>
                                     </td>
-                                    <td>${{ order.total }}</td>
+                                    <td>€{{ order.order_total }}</td>
                                 </tr>
                             {% endfor %}
                         </tbody>

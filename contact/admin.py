@@ -4,6 +4,7 @@ from .models import Feedback, Issues
 # Register your models here.
 admin.site.register(Issues, admin.ModelAdmin)
 
+
 @admin.register(Feedback)
 class FeedbackAdmin(admin.ModelAdmin):
 

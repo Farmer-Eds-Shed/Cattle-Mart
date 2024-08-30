@@ -23,3 +23,4 @@ class Feedback(models.Model):
 
     def __str__(self):
         return f"{self.issue} request from {self.name}"
+    

@@ -3,14 +3,13 @@ from django.conf import settings
 from django.shortcuts import get_object_or_404
 from cattle.models import Cattle
 
+
 def trailer_contents(request):
 
     trailer_cattle = []
     total = 0
     animal_sold = False
-
     trailer = request.session.get('trailer', {})
-
 
     for cattle_id, quantity in trailer.items():
         cattle = get_object_or_404(Cattle, pk=cattle_id)

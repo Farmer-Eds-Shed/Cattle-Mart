@@ -4,6 +4,7 @@ from cattle.models import Cattle
 
 # Create your views here.
 
+
 def view_trailer(request):
     """ A view that renders the trailer contents page """
 
@@ -25,16 +26,17 @@ def add_to_trailer(request, cattle_id):
     return redirect(redirect_url)
 
 
-
 def remove_from_trailer(request, cattle_id):
     """Remove the item from the trailer"""
 
     try:
         trailer = request.session.get('trailer', {})
         animal = Cattle.objects.get(pk=cattle_id)
-        
+
         trailer.pop(cattle_id)
-        messages.success(request, f'Removed {animal.stock_type} from your trailer')
+        messages.success(
+            request, f'Removed {animal.stock_type} from your trailer'
+            )
 
         request.session['trailer'] = trailer
         return HttpResponse(status=200)

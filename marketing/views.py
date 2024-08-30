@@ -99,7 +99,6 @@ def unsubscribe_fail_view(request):
     })
 
 
-
 def mailchimp_ping_view(request):
     response = mailchimp.ping.get()
     return JsonResponse(response)

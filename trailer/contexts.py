@@ -13,15 +13,14 @@ def trailer_contents(request):
     trailer = request.session.get('trailer', {})
 
     for cattle_id, quantity in trailer.items():
-            cattle = get_object_or_404(Cattle, pk=cattle_id)
-            total += cattle.price
-            if cattle.sold == True:
-                animal_sold = True
-            trailer_cattle.append({
-                'cattle_id': cattle_id,
-                'cattle': cattle,
-            })
-            
+        cattle = get_object_or_404(Cattle, pk=cattle_id)
+        total += cattle.price
+        if cattle.sold == True:
+            animal_sold = True
+        trailer_cattle.append({
+            'cattle_id': cattle_id,
+            'cattle': cattle,
+        })
 
     context = {
         'trailer_cattle': trailer_cattle,

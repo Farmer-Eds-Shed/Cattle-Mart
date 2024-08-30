@@ -6,7 +6,7 @@ A catle sales website. Code Institute Portfolio 5 Assessment
 
 
 ![am I responsive screenshot](media/Responsive.png)
-### **[Live Site:]([https://agri-hacks-60be548e369f.herokuapp.com/](https://cattle-mart-42a123405ccb.herokuapp.com/))** <br>
+### [Live Site:](https://cattle-mart-42a123405ccb.herokuapp.com/) <br>
 ### [Repository:](https://github.com/Farmer-Eds-Shed/Cattle-Mart/)
 
 ---
@@ -278,11 +278,23 @@ Manual testing was used through out the project development. Results of the fina
 
 ---
 
-#### User Navigation Tests
+#### Visitor Navigation Tests
 
 | Test | Result |
 |--|--|
-
+|Vistor can view Home Page|Pass|
+|All links on Home Page open|Pass|
+|Visitor can browse cattle|Pass|
+|Visitor can view cattle details|Pass|
+|Tooltips on CBV and ICBF work|Pass|
+|Already sold cattle cannot be added to trailer|Pass|
+|Visitor can add cattle to trailer|Pass|
+|Visitor can view trailer|Pass|
+|Visitor can complete a purchase|Pass|
+|Visitors order conformation displays|Pass|
+|Visitor can use the contact form|Pass|
+|Visitor can use the Search feature|Pass|
+|Visitor can sign up for news letter|
 
 ---
 
@@ -299,40 +311,63 @@ Manual testing was used through out the project development. Results of the fina
 
 #### Security Tests
 
-| Test | Returned | Result  |
-|--|--|--|
+| Test | Result|
+|--|--|
+|Visitor can not access Profile Area|Pass|
+|Visitor can not add stock|Pass|
+|Visitor can not edit stock|Pass|
+|Visitor can not delete stock|Pass|
 
 
 ---
 
 #### CRUD Tests
 
-| Test |Result  |
-|--|--|
+| Test |Result|Notes|
+|--|--|--|
+|Visitors can use contact form|Pass|
+|Members can use contact forms|Pass|
+|Members can edit billing details|Pass|
+|Admin users can add new stock|Pass|
+|Admin users can edit stock|Pass|
+|Admin users can delete stock|Pass|May cause issues for trailers and order history - Archive might be a better option for production site|
 
 
 --- 
 
 #### MailChimp Tests
 
-| Test |Result  |
+| Test |Result|
 |--|--|
+|Anyone can signup for newsletter|Pass|
+|Anyone can cancel newsletter|Pass|
 
 
 --- 
-
-#### Checkout Tests
-
-| Test |Result  |
-|--|--|
 
 #### Trailer Tests (Shopping Cart)
 
-| Test |Result  |
+| Test |Result|
 |--|--|
-
+|Anyone can put an animal in trailer|Pass|
+|Anyone can put additional animals in trailer|Pass|
+|Anyone can remove an animal from their trailer|Pass|
 
 --- 
+
+
+#### Checkout Tests
+
+| Test |Result  |Notes|
+|--|--|--|
+|members saved details load|Pass|
+|Unable to complete order if animal in trailer is already sold|Pass|Race condition exists which needs resolving before production release|
+|Payments Complete|Pass|
+|Order summery displays|Pass|
+Confirmation emails send|Pass|
+
+---
+
 
 #### Contact Form Tests
 
@@ -341,12 +376,6 @@ Manual testing was used through out the project development. Results of the fina
 |Users can submit a feedback form|Pass|
 |Users can select issue from dropdown list|Pass|
 
----
-
-#### Admin Tests
-
-| Test |Result  |
-|--|--|
 
 
 ### Responsiveness testing

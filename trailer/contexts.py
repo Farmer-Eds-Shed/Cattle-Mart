@@ -13,7 +13,6 @@ def trailer_contents(request):
     trailer = request.session.get('trailer', {})
 
     for cattle_id, quantity in trailer.items():
-        try:
             cattle = get_object_or_404(Cattle, pk=cattle_id)
             total += cattle.price
             if cattle.sold == True:
@@ -22,8 +21,6 @@ def trailer_contents(request):
                 'cattle_id': cattle_id,
                 'cattle': cattle,
             })
-        except:
-            messages.error(f'{cattle_id} No longer exists')
             
 
     context = {

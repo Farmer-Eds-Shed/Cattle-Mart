@@ -10,10 +10,6 @@ A catle sales website. Code Institute Portfolio 5 Assessment
 ### [Repository:](https://github.com/Farmer-Eds-Shed/Cattle-Mart/)
 
 ---
-
-Unfortunatly I've run short on time on this project, so I am submitting it as is. I will address the shortcommings in a resubmission if required.
-
-
 ## Contents
 <a name="contents"><a>
  1. [ User Experience UX ](#user-experience-ux)
@@ -476,7 +472,7 @@ To deploy the project through Heroku follow these steps:
 <a name="seo"></a>
 
 - A robots.txt file
-- A sitemap.xml file
+- A sitemap.xml file generated using [Sitemaps.com](https://www.xml-sitemaps.com/details-cattle-mart-42a123405ccb.herokuapp.com-52d985ad9.html)
 - Descriptive meta tags
 
 
@@ -486,8 +482,8 @@ To deploy the project through Heroku follow these steps:
 
 <a name="marketing"></a>
 
-- Implemented Mailchip Subscribe and Usubscribe form using
-
+- Implemented Mailchip Subscribe and Usubscribe form using the  [Mailchimp API](https://mailchimp.com/integrations/?igaag=160461836334&igaat=&igacm=21247734929&igacr=698073834376&igakw=mailchimp%2520api&igamt=e&igant=g&ds_c=DEPT_AOC_Google_Search_UKI_EN_Brand_Acquire_Omega_MKAG_UKI&ds_kids=p80048369373&ds_a_lid=kwd-303435804373&ds_cid=71700000118582195&ds_agid=58700008710455191&gad_source=1&gclid=Cj0KCQjw28W2BhC7ARIsAPerrcLW01KPdkVaVbqFRv0CUB3uHjk5hKHLO5Mw0QagF_SGjKu8celXTgEaAhz_EALw_wcB&gclsrc=aw.ds)
+- [Facebook Busineess Page](https://www.facebook.com/FarmerEdsShed)
 
 [Back to Top of page](#contents)
 
@@ -495,9 +491,10 @@ To deploy the project through Heroku follow these steps:
 
 <a name="besiness"></a>
 
-B2B Site for farmers to purchase stock from a Livestock Dealer
+- Cattle Mart is an e-commerce website that specializes in the sale of cattle from a large cattle dealer to individual farmers. 
+ - To achieve our business goals, we carefully select our cattle from quality cattle breeder/producers both nationwide and internationally.
+ - To support our business model, we supply a friendly service, with extensive knowlage of all breeds within the various cattle enterprises.
 
-More to come .............
 
 
 
@@ -514,7 +511,7 @@ More to come .............
 - [Django Docs](https://docs.djangoproject.com/en/5.0/) - Django
 - [Favicon.io](https://favicon.io/") - Favicon
 - [Code Institute WalkThroughs](https://learn.codeinstitute.net/dashboard) - Boiler plate code and more.
-- [MailChimp Marketing]("https://testdriven.io/blog/django-mailchimp/") - Mailchimp subscribe/unsubscribe form
+- [MailChimp Marketing](https://testdriven.io/blog/django-mailchimp/) - Mailchimp subscribe/unsubscribe form
 
 
 

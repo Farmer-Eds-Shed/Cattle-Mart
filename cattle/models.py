@@ -6,7 +6,8 @@ class Enterprise(models.Model):
 
     def __str__(self):
         return self.name
-    
+
+
 class StockType(models.Model):
     name = models.CharField(max_length=20)
 
@@ -21,12 +22,19 @@ class Breed(models.Model):
     def __str__(self):
         return self.name
 
+
 class Cattle(models.Model):
-    enterprise = models.ForeignKey('Enterprise', null=True, blank=True, on_delete=models.SET_NULL)
-    stock_type = models.ForeignKey('StockType', null=True, blank=True, on_delete=models.SET_NULL)
+    enterprise = models.ForeignKey(
+        'Enterprise', null=True, blank=True, on_delete=models.SET_NULL
+        )
+    stock_type = models.ForeignKey(
+        'StockType', null=True, blank=True, on_delete=models.SET_NULL
+        )
     tag = models.CharField(max_length=15, unique=True)
     name = models.CharField(max_length=254, null=True, blank=True)
-    breed = models.ForeignKey('Breed', null=True, blank=True, on_delete=models.SET_NULL)
+    breed = models.ForeignKey(
+        'Breed', null=True, blank=True, on_delete=models.SET_NULL
+        )
     description = models.TextField()
     price = models.IntegerField()
     star_rating = models.IntegerField(null=True, blank=True)
@@ -35,10 +43,8 @@ class Cattle(models.Model):
     image = models.ImageField(null=True, blank=True)
     sold = models.BooleanField()
 
-
-
     def __str__(self):
         return self.tag
-    
+
     class Meta:
         verbose_name_plural = "Cattle"

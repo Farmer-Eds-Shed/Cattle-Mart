@@ -420,17 +420,15 @@ Code to be run through the following validations tools.
 
 <a name="bugs"></a>
 
-#### Resolved Bugs
-| Bug | Fix |
-|--|--|
-
-
 #### UnResolved Bugs
 
 | Bug | Comment |
 |--|--|
-|Order Total not updating in database|To be resolved for resubmission|
-|404 page not working|To be resolved for resubmission|
+|Code 500 if animal deleted is in Trailer|Cookie needs to be deleteted to resolve|
+|Race Condition at point of sale|Only one of each animal can exist, potential for 2 buyers to complete purchase|
+
+- **Code 500:** Probably the best way to deal with this issue is to not allow a full delete of the animal as it should remain in the database for tracking of sales anyway. An archive option would make far more sense in ths case.
+- **Race Condition:** This issue could be handled in a number of ways, but would require more work than there is time for before submission. The trailer (bag/shopping cart) was based on the Boutiqu-Ado tutorial contexts example, it may have been a better idea to create a trailer database model instead, where additional holds may be placed on animals depending on the stage of the transaction with different potential buyers trailers. This site would likely be low volume high value sales so unlikey to create too much of a performace overhead.    
  
 
 [Back to Top of page](#contents)

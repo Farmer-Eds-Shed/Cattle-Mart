@@ -386,6 +386,14 @@ Responsiveness testing was performed using:
 
 Code to be run through the following validations tools.
 - [W3 HTML Validator](https://validator.w3.org/)
+   - [Home Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcattle-mart-42a123405ccb.herokuapp.com%2F)
+   - [All Cattle](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fcattle-mart-42a123405ccb.herokuapp.com%2Fcattle%2F%3Fsort%3Dprice%26direction%3Dasc)
+   - [Trailer](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fcattle-mart-42a123405ccb.herokuapp.com%2Ftrailer)
+   - [Checkout](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcattle-mart-42a123405ccb.herokuapp.com%2Ftrailer%2F)
+   - [Contact](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcattle-mart-42a123405ccb.herokuapp.com%2Fcontact%2F)
+   - [Login](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fcattle-mart-42a123405ccb.herokuapp.com%2Faccounts%2Flogin%2F)
+   - [Register](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fcattle-mart-42a123405ccb.herokuapp.com%2Faccounts%2Fsignup%2F)
+     
 - [CI Python Linter](https://pep8ci.herokuapp.com/)
 - [W3 CSS Validator](https://jigsaw.w3.org/css-validator/validator.html.en)
 - [JSHint ](https://jshint.com/)

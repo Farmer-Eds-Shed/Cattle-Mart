@@ -57,6 +57,11 @@ The following user stories were scoped out of the project due to time constraint
 
 ### PLanning
 
+- Wireframes
+
+  ### Cattle list
+  ![Cattle List](media/wireframe.png)
+
 
 - Database Schema
 

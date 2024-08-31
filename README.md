@@ -173,26 +173,29 @@ As User Stories were worked on they were moved into the "In Progress" section of
 <a name="features"></a>
 
 #### User based Features Implemented:
-
-
+- Users can browse the site for cattle available for sale.
+- Users can create an account.
+- Users can update Billing Adress.
+- Users can view past orders.
+- Users can purchase cattle through the sites payment system.
+- Users can contact the business through a contact form.
 
 #### Admin based features Implemented:
-
-
+- Admins can add cattle for Sale.
+- Admins can edit existing cattle.
+- Admins can delete existing cattle.
 
 
 #### Account restrictions:
-
-
-
-
-### Site Features
-
+- Unathenticated users cannot access profile data.
+- Non admin users cannot add or edit cattle data. 
 
 
 ### Features Left to Implement
 
-- 
+- Site needs a mechenisim to archive sold animals
+- A front end view for admins to deal with contact requests
+- A Blog
 
 
 [Back to Top of page](#contents)
@@ -488,8 +491,10 @@ To deploy the project through Heroku follow these steps:
 <a name="seo"></a>
 
 - A robots.txt file
-- A sitemap.xml file generated using [Sitemaps.com](https://www.xml-sitemaps.com/details-cattle-mart-42a123405ccb.herokuapp.com-52d985ad9.html)
-- Descriptive meta tags
+- A **sitemap.xml** file generated using [Sitemaps.com](https://www.xml-sitemaps.com/details-cattle-mart-42a123405ccb.herokuapp.com-52d985ad9.html)
+- **Descriptive meta tags:** 
+  - **Keywords:** cattle, cattle sales, beef cattle sales, dairy cattle sales, calves, bulls, cows, heifers, bullocks
+  - **Site Description:** Cattle Mart, page for advertising and sales of our cattle
 
 
 [Back to Top of page](#contents)
@@ -507,12 +512,9 @@ To deploy the project through Heroku follow these steps:
 
 <a name="business"></a>
 
-- Cattle Mart is an e-commerce website that specializes in the sale of cattle from a large cattle dealer to individual farmers. 
+- Cattle Mart is a B2B e-commerce website that specializes in the sale of cattle from a large cattle dealer to individual farmers. 
  - To achieve our business goals, we carefully select our cattle from quality cattle breeder/producers both nationwide and internationally.
  - To support our business model, we supply a friendly service, with extensive knowlage of all breeds within the various cattle enterprises.
-
-
-
 
 
 [Back to Top of page](#contents)

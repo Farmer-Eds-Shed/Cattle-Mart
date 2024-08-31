@@ -505,7 +505,7 @@ To deploy the project through Heroku follow these steps:
 
 ## Business Model
 
-<a name="besiness"></a>
+<a name="business"></a>
 
 - Cattle Mart is an e-commerce website that specializes in the sale of cattle from a large cattle dealer to individual farmers. 
  - To achieve our business goals, we carefully select our cattle from quality cattle breeder/producers both nationwide and internationally.

@@ -33,24 +33,31 @@ A catle sales website. Code Institute Portfolio 5 Assessment
 
 A visitor to Cattle-Mart would be a farmer looking to purchase animals for any cattle enterprise Beef/Dairy/Organic 
 ### User Stories
+[Project Canban](https://github.com/users/Farmer-Eds-Shed/projects/4)
 
 #### Epic | Site Deployment
+- As a Site Devloper, I can setup and deploy using Django
 
 #### Epic | User Managment
-- As a Site User I can register an account so that I can comment on and create new blog posts.
-- As a Site Admin I can manage user accounts.
+- As a site user I can register an account so that I can access and edit profile data.
+- As a site user I can access purchase history.
+- As a site user I can reset my own password.
+- As a site admin I can manage user accounts.
 
 #### Epic | Site Navigation
+- As a Site User I can filter stock by type.
+- As a site user I can view /add /remove trailer items.
 
 #### Epic | E-Commerce
+- As a site user I can purchase animals from my trailer.
+- As a site user I will receive e-mail confirmation of my order.
 
 #### Epic | Marketing
+- As a site user I can subscribe to a newsletter.
+- As a site user I can unsubscribe from a news letter.
 
 #### Epic | Contact
-
-#### User stories not yet implemented
-The following user stories were scoped out of the project due to time constraints and labelled as "Won't Have Now" on the project board on GitHub. It is intended that these user stories will be implemented later.
-
+- As a site user I can contact the business.
 
 
 [Back to Top of page](#contents)

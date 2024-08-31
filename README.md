@@ -393,9 +393,17 @@ Code to be run through the following validations tools.
    - [Contact](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcattle-mart-42a123405ccb.herokuapp.com%2Fcontact%2F)
    - [Login](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fcattle-mart-42a123405ccb.herokuapp.com%2Faccounts%2Flogin%2F)
    - [Register](https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fcattle-mart-42a123405ccb.herokuapp.com%2Faccounts%2Fsignup%2F)
+
+- [W3 CSS Validator](https://jigsaw.w3.org/css-validator/validator.html.en)
+   - [Home Page](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcattle-mart-42a123405ccb.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+   - [All Cattle](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcattle-mart-42a123405ccb.herokuapp.com%2Fcattle%2F%3Fsort%3Dprice%26direction%3Dasc&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+   - [Trailer](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcattle-mart-42a123405ccb.herokuapp.com%2Ftrailer%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+   - [Checkout](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcattle-mart-42a123405ccb.herokuapp.com%2Fcheckout%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+   - [Contact](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcattle-mart-42a123405ccb.herokuapp.com%2Fcontact%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+   - [Login](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcattle-mart-42a123405ccb.herokuapp.com%2Faccounts%2Flogin%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+   - [Register](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fcattle-mart-42a123405ccb.herokuapp.com%2Faccounts%2Fsignup%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
      
 - [CI Python Linter](https://pep8ci.herokuapp.com/)
-- [W3 CSS Validator](https://jigsaw.w3.org/css-validator/validator.html.en)
 - [JSHint ](https://jshint.com/)
 
 [Back to Top of page](#contents)

@@ -33,12 +33,12 @@ A catle sales website. Code Institute Portfolio 5 Assessment
 
 A visitor to Cattle-Mart would be a farmer looking to purchase animals for any cattle enterprise Beef/Dairy/Organic 
 ### User Stories
-[Project Canban](https://github.com/users/Farmer-Eds-Shed/projects/4)
+[Project Kanban](https://github.com/users/Farmer-Eds-Shed/projects/4)
 
 #### Epic | Site Deployment
-- As a Site Devloper, I can setup and deploy using Django
+- As a Site Developer, I can setup and deploy using Django
 
-#### Epic | User Managment
+#### Epic | User Management
 - As a site user I can register an account so that I can access and edit profile data.
 - As a site user I can access purchase history.
 - As a site user I can reset my own password.
@@ -187,7 +187,7 @@ As User Stories were worked on they were moved into the "In Progress" section of
 #### User based Features Implemented:
 - Users can browse the site for cattle available for sale.
 - Users can create an account.
-- Users can update Billing Adress.
+- Users can update Billing Address.
 - Users can view past orders.
 - Users can purchase cattle through the sites payment system.
 - Users can contact the business through a contact form.
@@ -199,13 +199,13 @@ As User Stories were worked on they were moved into the "In Progress" section of
 
 
 #### Account restrictions:
-- Unathenticated users cannot access profile data.
+- Unauthenticated users cannot access profile data.
 - Non admin users cannot add or edit cattle data. 
 
 
 ### Features Left to Implement
 
-- Site needs a mechenisim to archive sold animals
+- Site needs a mechanism to archive sold animals
 - A front end view for admins to deal with contact requests
 - A Blog
 
@@ -222,7 +222,7 @@ As User Stories were worked on they were moved into the "In Progress" section of
 
 ### CSS
 
- - Custom CSS used to style the pages and give the site an agri theme.
+ - Custom CSS used to style the pages and give the site an Agri theme.
 
 ### JavaScript
 
@@ -238,7 +238,7 @@ As User Stories were worked on they were moved into the "In Progress" section of
 
 ### Stripe
 
-- Stripe paments system.
+- Stripe payments system.
 
 ### MailChimp
 
@@ -293,7 +293,7 @@ Manual testing was used through out the project development. Results of the fina
 
 | Test | Result |
 |--|--|
-|Vistor can view Home Page|Pass|
+|Visitor can view Home Page|Pass|
 |All links on Home Page open|Pass|
 |Visitor can browse cattle|Pass|
 |Visitor can view cattle details|Pass|
@@ -431,11 +431,11 @@ Code to be run through the following validations tools.
 
 | Bug | Comment |
 |--|--|
-|Code 500 if animal deleted is in Trailer|Cookie needs to be deleteted to resolve|
+|Code 500 if animal deleted is in Trailer|Cookie needs to be deleted to resolve|
 |Race Condition at point of sale|Only one of each animal can exist, potential for 2 buyers to complete purchase|
 
-- **Code 500:** Probably the best way to deal with this issue is to not allow a full delete of the animal as it should remain in the database for tracking of sales anyway. An archive option would make far more sense in ths case.
-- **Race Condition:** This issue could be handled in a number of ways, but would require more work than there is time for before submission. The trailer (bag/shopping cart) was based on the Boutiqu-Ado tutorial contexts example, it may have been a better idea to create a trailer database model instead, where additional holds may be placed on animals depending on the stage of the transaction with different potential buyers trailers. This site would likely be low volume high value sales so unlikey to create too much of a performace overhead.    
+- **Code 500:** Probably the best way to deal with this issue is to not allow a full delete of the animal as it should remain in the database for tracking of sales anyway. An archive option would make far more sense in this case.
+- **Race Condition:** This issue could be handled in a number of ways, but would require more work than there is time for before submission. The trailer (bag/shopping cart) was based on the Boutique-Ado tutorial contexts example, it may have been a better idea to create a trailer database model instead, where additional holds may be placed on animals depending on the stage of the transaction with different potential buyers trailers. This site would likely be low volume high value sales so unlikely to create too much of a performance overhead.    
  
 
 [Back to Top of page](#contents)
@@ -513,8 +513,8 @@ To deploy the project through Heroku follow these steps:
 
 <a name="marketing"></a>
 
-- Implemented Mailchip Subscribe and Usubscribe form using the  [Mailchimp API](https://mailchimp.com/integrations/?igaag=160461836334&igaat=&igacm=21247734929&igacr=698073834376&igakw=mailchimp%2520api&igamt=e&igant=g&ds_c=DEPT_AOC_Google_Search_UKI_EN_Brand_Acquire_Omega_MKAG_UKI&ds_kids=p80048369373&ds_a_lid=kwd-303435804373&ds_cid=71700000118582195&ds_agid=58700008710455191&gad_source=1&gclid=Cj0KCQjw28W2BhC7ARIsAPerrcLW01KPdkVaVbqFRv0CUB3uHjk5hKHLO5Mw0QagF_SGjKu8celXTgEaAhz_EALw_wcB&gclsrc=aw.ds)
-- [Facebook Busineess Page](https://www.facebook.com/FarmerEdsShed)
+- Implemented Mailchimp Subscribe and Unsubscribe form using the  [Mailchimp API](https://mailchimp.com/integrations/?igaag=160461836334&igaat=&igacm=21247734929&igacr=698073834376&igakw=mailchimp%2520api&igamt=e&igant=g&ds_c=DEPT_AOC_Google_Search_UKI_EN_Brand_Acquire_Omega_MKAG_UKI&ds_kids=p80048369373&ds_a_lid=kwd-303435804373&ds_cid=71700000118582195&ds_agid=58700008710455191&gad_source=1&gclid=Cj0KCQjw28W2BhC7ARIsAPerrcLW01KPdkVaVbqFRv0CUB3uHjk5hKHLO5Mw0QagF_SGjKu8celXTgEaAhz_EALw_wcB&gclsrc=aw.ds)
+- [Facebook Business Page](https://www.facebook.com/FarmerEdsShed)
 
 [Back to Top of page](#contents)
 

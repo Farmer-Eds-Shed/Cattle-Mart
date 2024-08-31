@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect
 from cattle_mart import settings
 from marketing.forms import EmailForm
 
+# https://testdriven.io/blog/django-mailchimp/
 import mailchimp_marketing as MailchimpMarketing
 from mailchimp_marketing.api_client import ApiClientError
 
